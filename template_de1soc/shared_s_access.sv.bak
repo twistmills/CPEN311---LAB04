@@ -1,0 +1,99 @@
+module shared_access_many_to_one #(
+    parameter N = 32,
+    parameter M = 8,
+    parameter num_FSMs = 3
+) (
+    output reg [(N-1):0] output_arguments,
+    output reg start_target_state_machine,
+    input target_state_machine_finished,
+    input sm_clk,
+    input reset,
+    input [num_FSMs-1:0] start_request,
+    output [num_FSMs-1:0] finish,
+    output [num_FSMs-1:0] reset_start_request,
+    input [(N*num_FSMs)-1:0] input_arguments,
+    output reg [(M*num_FSMs)-1:0] received_data,
+    input [M-1:0] in_received_data
+);
+
+logic [num_FSMs-1:0] register_data_enable;
+logic [10:0] state;
+logic [$clog2(num_FSMs):0] fsm_index;
+
+// Setup states 
+localparam check_start     = 11'b0000_0000000;
+localparam give_start      = 11'b0001_1100000;
+localparam wait_for_finish = 11'b0010_0000000;
+localparam register_data   = 11'b0011_0000010;
+localparam give_finish     = 11'b0100_0001000;
+
+// Flattened arrays to vectors
+wire [(N-1):0] input_arguments_array [num_FSMs-1:0];
+reg  [(M-1):0] received_data_array [num_FSMs-1:0];
+
+
+// Generate a number of registers depending on amount of FSMs connected 
+generate
+    genvar i;
+    for (i = 0; i < num_FSMs; i = i + 1) begin : flatten
+        // Adjusting slice width to 8 bits
+        assign input_arguments_array[i] = input_arguments[(i+1)*N-1:i*N]; // Splits input arguments into 32 bit chunks dependent on active index
+        always @(posedge sm_clk) begin
+            if (register_data_enable[i]) begin
+                received_data_array[i] <= in_received_data;
+            end
+        end
+        assign received_data[(i+1)*M-1:i*M] = received_data_array[i];
+    end
+endgenerate
+
+// Set output assignments 
+always_comb begin
+    start_target_state_machine = state[6];
+    reset_start_request = 0;
+    finish = 0;
+    register_data_enable = 0;
+
+    output_arguments = input_arguments_array[fsm_index];
+
+    if (state == register_data) begin
+        register_data_enable[fsm_index] = 1;
+    end else if (state == give_finish) begin
+        finish[fsm_index] = 1;
+    end else if (state == check_start) begin
+        reset_start_request[fsm_index] = 1;
+    end
+end
+
+// State machine
+always_ff @(posedge sm_clk or posedge reset) begin
+    if (reset) begin
+        state <= check_start;
+        fsm_index <= 0;
+    end else begin
+        case(state)
+            check_start: begin
+                if (start_request[fsm_index]) begin
+                    state <= give_start;
+                end else begin
+                    fsm_index <= (fsm_index + 1) % num_FSMs;
+                end
+            end
+            give_start: state <= wait_for_finish;
+            wait_for_finish: begin
+                if (target_state_machine_finished) begin
+                    state <= register_data;
+                end
+            end
+            register_data: state <= give_finish;
+            give_finish: begin
+                state <= check_start;
+                fsm_index <= (fsm_index + 1) % num_FSMs;
+            end
+            default: state <= check_start;
+        endcase
+    end
+end
+
+endmodule
+
