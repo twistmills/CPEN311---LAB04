@@ -1,5 +1,4 @@
 |shared_s_access
-clk => ~NO_FANOUT~
 source[0] => Mux0.IN3
 source[0] => Mux1.IN3
 source[0] => Mux2.IN3
