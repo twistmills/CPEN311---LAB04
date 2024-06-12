@@ -1,0 +1,1 @@
+Info (10281): Verilog HDL Declaration information at s_memory_init.sv(8): object "start" differs only in case from object "START" in the same scope File: C:/Users/twist/OneDrive/Documents/GitHub/CPEN311---LAB04/template_de1soc/Our Code/s_memory_init.sv Line: 8

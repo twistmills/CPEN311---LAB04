@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CSEMA5F31C6
-set_global_assignment -name TOP_LEVEL_ENTITY ksa
+set_global_assignment -name TOP_LEVEL_ENTITY s_memory_init_tb
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "13.0 SP1"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "10:20:18  APRIL 25, 2016"
 set_global_assignment -name LAST_QUARTUS_VERSION "16.1.2 Lite Edition"
@@ -272,14 +272,67 @@ set_location_assignment PIN_AE22 -to GPIO_1[32]
 set_location_assignment PIN_AD21 -to GPIO_1[33]
 set_location_assignment PIN_AA20 -to GPIO_1[34]
 set_location_assignment PIN_AC22 -to GPIO_1[35]
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_parameter -name CYCLONEII_SAFE_WRITE RESTRUCTURE
 set_location_assignment PIN_AJ4 -to ADC_CS_N
 set_location_assignment PIN_AK4 -to ADC_DIN
 set_location_assignment PIN_AK3 -to ADC_DOUT
 set_location_assignment PIN_AK2 -to ADC_SCLK
+set_location_assignment PIN_AA16 -to CLOCK2_50
+set_location_assignment PIN_Y26 -to CLOCK3_50
+set_location_assignment PIN_K14 -to CLOCK4_50
+set_location_assignment PIN_AJ14 -to DRAM_ADDR[12]
+set_location_assignment PIN_AF13 -to DRAM_BA[0]
+set_location_assignment PIN_AJ12 -to DRAM_BA[1]
+set_location_assignment PIN_AA12 -to FAN_CTRL
+set_location_assignment PIN_J12 -to FPGA_I2C_SCLK
+set_location_assignment PIN_K12 -to FPGA_I2C_SDAT
+set_location_assignment PIN_AD9 -to PS2_CLK2
+set_location_assignment PIN_AE9 -to PS2_DAT2
+set_location_assignment PIN_F6 -to TD_RESET_N
+set_location_assignment PIN_AF4 -to USB_B2_CLK
+set_location_assignment PIN_AH4 -to USB_B2_DATA[0]
+set_location_assignment PIN_AH3 -to USB_B2_DATA[1]
+set_location_assignment PIN_AJ2 -to USB_B2_DATA[2]
+set_location_assignment PIN_AJ1 -to USB_B2_DATA[3]
+set_location_assignment PIN_AH2 -to USB_B2_DATA[4]
+set_location_assignment PIN_AG3 -to USB_B2_DATA[5]
+set_location_assignment PIN_AG2 -to USB_B2_DATA[6]
+set_location_assignment PIN_AG1 -to USB_B2_DATA[7]
+set_location_assignment PIN_AF5 -to USB_EMPTY
+set_location_assignment PIN_AG5 -to USB_FULL
+set_location_assignment PIN_AF6 -to USB_OE_N
+set_location_assignment PIN_AG6 -to USB_RD_N
+set_location_assignment PIN_AG7 -to USB_RESET_N
+set_location_assignment PIN_AG8 -to USB_SCL
+set_location_assignment PIN_AF8 -to USB_SDA
+set_location_assignment PIN_AH5 -to USB_WR_N
+set_location_assignment PIN_F10 -to VGA_BLANK_N
+set_location_assignment PIN_C10 -to VGA_SYNC_N
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name EXTRACT_VERILOG_STATE_MACHINES OFF
+set_global_assignment -name EXTRACT_VHDL_STATE_MACHINES OFF
+set_global_assignment -name VERILOG_NON_CONSTANT_LOOP_LIMIT 5000
+set_global_assignment -name AUTO_ROM_RECOGNITION OFF
+set_global_assignment -name AUTO_RAM_RECOGNITION OFF
+set_global_assignment -name SYNCHRONIZATION_REGISTER_CHAIN_LENGTH 2
+set_global_assignment -name OPTIMIZE_POWER_DURING_SYNTHESIS OFF
+set_global_assignment -name ROUTER_CLOCKING_TOPOLOGY_ANALYSIS ON
+set_global_assignment -name BLOCK_RAM_AND_MLAB_EQUIVALENT_POWER_UP_CONDITIONS CARE
+set_global_assignment -name PHYSICAL_SYNTHESIS_REGISTER_RETIMING ON
+set_global_assignment -name FITTER_EFFORT "STANDARD FIT"
+set_global_assignment -name PHYSICAL_SYNTHESIS_EFFORT FAST
+set_global_assignment -name VERILOG_INPUT_VERSION SYSTEMVERILOG_2005
+set_global_assignment -name VERILOG_SHOW_LMF_MAPPING_MESSAGES OFF
+set_global_assignment -name SYNCHRONIZER_IDENTIFICATION AUTO
+set_global_assignment -name TIMEQUEST_DO_CCPP_REMOVAL ON
+set_global_assignment -name SDC_FILE timing_constraints.sdc
+set_global_assignment -name VHDL_FILE ksa.vhd
+set_global_assignment -name QIP_FILE s_memory.qip
+set_global_assignment -name SYSTEMVERILOG_FILE "Our Code/s_memory_init_tb.sv"
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_CS_N
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_DIN
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_DOUT
@@ -291,15 +344,9 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AUD_DACDAT
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AUD_DACLRCK
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AUD_XCK
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK_50
-set_location_assignment PIN_AA16 -to CLOCK2_50
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK2_50
-set_location_assignment PIN_Y26 -to CLOCK3_50
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK3_50
-set_location_assignment PIN_K14 -to CLOCK4_50
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK4_50
-set_location_assignment PIN_AJ14 -to DRAM_ADDR[12]
-set_location_assignment PIN_AF13 -to DRAM_BA[0]
-set_location_assignment PIN_AJ12 -to DRAM_BA[1]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[0]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[1]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[2]
@@ -339,10 +386,7 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_LDQM
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_RAS_N
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_UDQM
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_WE_N
-set_location_assignment PIN_AA12 -to FAN_CTRL
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FAN_CTRL
-set_location_assignment PIN_J12 -to FPGA_I2C_SCLK
-set_location_assignment PIN_K12 -to FPGA_I2C_SDAT
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FPGA_I2C_SCLK
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FPGA_I2C_SDAT
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[0]
@@ -477,8 +521,6 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[8]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[9]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PS2_CLK
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PS2_DAT
-set_location_assignment PIN_AD9 -to PS2_CLK2
-set_location_assignment PIN_AE9 -to PS2_DAT2
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PS2_CLK2
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PS2_DAT2
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[0]
@@ -491,7 +533,6 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[6]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[7]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[8]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[9]
-set_location_assignment PIN_F6 -to TD_RESET_N
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_CLK27
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[0]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[1]
@@ -504,23 +545,6 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[7]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_HS
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_RESET_N
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_VS
-set_location_assignment PIN_AF4 -to USB_B2_CLK
-set_location_assignment PIN_AH4 -to USB_B2_DATA[0]
-set_location_assignment PIN_AH3 -to USB_B2_DATA[1]
-set_location_assignment PIN_AJ2 -to USB_B2_DATA[2]
-set_location_assignment PIN_AJ1 -to USB_B2_DATA[3]
-set_location_assignment PIN_AH2 -to USB_B2_DATA[4]
-set_location_assignment PIN_AG3 -to USB_B2_DATA[5]
-set_location_assignment PIN_AG2 -to USB_B2_DATA[6]
-set_location_assignment PIN_AG1 -to USB_B2_DATA[7]
-set_location_assignment PIN_AF5 -to USB_EMPTY
-set_location_assignment PIN_AG5 -to USB_FULL
-set_location_assignment PIN_AF6 -to USB_OE_N
-set_location_assignment PIN_AG6 -to USB_RD_N
-set_location_assignment PIN_AG7 -to USB_RESET_N
-set_location_assignment PIN_AG8 -to USB_SCL
-set_location_assignment PIN_AF8 -to USB_SDA
-set_location_assignment PIN_AH5 -to USB_WR_N
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to USB_B2_CLK
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to USB_B2_DATA[0]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to USB_B2_DATA[1]
@@ -538,8 +562,6 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to USB_RESET_N
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to USB_SCL
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to USB_SDA
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to USB_WR_N
-set_location_assignment PIN_F10 -to VGA_BLANK_N
-set_location_assignment PIN_C10 -to VGA_SYNC_N
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[0]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[1]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[2]
@@ -914,6 +936,5 @@ set_global_assignment -name SYNCHRONIZER_IDENTIFICATION AUTO
 set_global_assignment -name TIMEQUEST_DO_CCPP_REMOVAL ON
 set_global_assignment -name SDC_FILE timing_constraints.sdc
 set_global_assignment -name VHDL_FILE ksa.vhd
-set_global_assignment -name QIP_FILE s_memory.qip
-set_global_assignment -name SYSTEMVERILOG_FILE shared_s_access.sv
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name QIP_FILE s_memory.qip
