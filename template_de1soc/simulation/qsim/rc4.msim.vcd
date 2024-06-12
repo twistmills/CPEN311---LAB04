@@ -1,0 +1,596 @@
+$comment
+	File created using the following command:
+		vcd file rc4.msim.vcd -direction
+$end
+$date
+	Wed Jun 12 14:38:37 2024
+$end
+$version
+	ModelSim Version 10.5b
+$end
+$timescale
+	1ps
+$end
+
+$scope module s_memory_init_tb_vlg_vec_tst $end
+$var reg 1 ! clk $end
+$var reg 1 " reset $end
+$var reg 1 # start $end
+$var wire 1 $ address [7] $end
+$var wire 1 % address [6] $end
+$var wire 1 & address [5] $end
+$var wire 1 ' address [4] $end
+$var wire 1 ( address [3] $end
+$var wire 1 ) address [2] $end
+$var wire 1 * address [1] $end
+$var wire 1 + address [0] $end
+$var wire 1 , data [7] $end
+$var wire 1 - data [6] $end
+$var wire 1 . data [5] $end
+$var wire 1 / data [4] $end
+$var wire 1 0 data [3] $end
+$var wire 1 1 data [2] $end
+$var wire 1 2 data [1] $end
+$var wire 1 3 data [0] $end
+$var wire 1 4 finish $end
+$var wire 1 5 write_enable $end
+
+$scope module i1 $end
+$var wire 1 6 gnd $end
+$var wire 1 7 vcc $end
+$var wire 1 8 unknown $end
+$var tri1 1 9 devclrn $end
+$var tri1 1 : devpor $end
+$var tri1 1 ; devoe $end
+$var wire 1 < ~QUARTUS_CREATED_GND~I_combout $end
+$var wire 1 = TD_CLK27~ibuf_o $end
+$var wire 1 > TD_CLK27~padout $end
+$var wire 1 ? TD_RESET_N~padout $end
+$var wire 1 @ TD_RESET_N~obuf_o $end
+$var wire 1 A clk~input_o $end
+$var wire 1 B clk~inputCLKENA0_outclk $end
+$var wire 1 C MUT|Add0~1_sumout $end
+$var wire 1 D reset~input_o $end
+$var wire 1 E MUT|Add0~2 $end
+$var wire 1 F MUT|Add0~5_sumout $end
+$var wire 1 G start~input_o $end
+$var wire 1 H MUT|state[0]~feeder_combout $end
+$var wire 1 I MUT|Add0~26 $end
+$var wire 1 J MUT|Add0~29_sumout $end
+$var wire 1 K MUT|Equal3~0_combout $end
+$var wire 1 L MUT|Selector8~0_combout $end
+$var wire 1 M MUT|count[0]~1_combout $end
+$var wire 1 N MUT|Add0~6 $end
+$var wire 1 O MUT|Add0~9_sumout $end
+$var wire 1 P MUT|Add0~10 $end
+$var wire 1 Q MUT|Add0~13_sumout $end
+$var wire 1 R MUT|Add0~14 $end
+$var wire 1 S MUT|Add0~17_sumout $end
+$var wire 1 T MUT|Add0~18 $end
+$var wire 1 U MUT|Add0~21_sumout $end
+$var wire 1 V MUT|Add0~22 $end
+$var wire 1 W MUT|Add0~25_sumout $end
+$var wire 1 X MUT|count[0]~0_combout $end
+$var wire 1 Y MUT|Equal2~0_combout $end
+$var wire 1 Z MUT|count [7] $end
+$var wire 1 [ MUT|count [6] $end
+$var wire 1 \ MUT|count [5] $end
+$var wire 1 ] MUT|count [4] $end
+$var wire 1 ^ MUT|count [3] $end
+$var wire 1 _ MUT|count [2] $end
+$var wire 1 ` MUT|count [1] $end
+$var wire 1 a MUT|count [0] $end
+$var wire 1 b MUT|state [1] $end
+$var wire 1 c MUT|state [0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+0"
+1#
+0+
+0*
+0)
+0(
+0'
+0&
+0%
+0$
+03
+02
+01
+00
+0/
+0.
+0-
+0,
+04
+05
+06
+17
+x8
+19
+1:
+1;
+0<
+z=
+z>
+z?
+z@
+0A
+0B
+1C
+0D
+0E
+0F
+1G
+1H
+0I
+0J
+0K
+1L
+1M
+0N
+0O
+0P
+0Q
+0R
+0S
+0T
+0U
+0V
+0W
+1X
+0Y
+0a
+0`
+0_
+0^
+0]
+0\
+0[
+0Z
+0c
+0b
+$end
+#20000
+1!
+1A
+1B
+1b
+1c
+0X
+1Y
+15
+#40000
+0!
+0A
+0B
+#60000
+1!
+1A
+1B
+1a
+1+
+13
+1E
+0C
+1F
+#80000
+0!
+0A
+0B
+#100000
+1!
+1A
+1B
+0a
+1`
+1*
+12
+0+
+03
+1N
+0E
+0F
+1C
+0N
+1O
+1F
+0O
+#110000
+0#
+0G
+#120000
+0!
+0A
+0B
+#140000
+1!
+1A
+1B
+1a
+1+
+13
+1E
+0C
+1N
+0F
+1O
+#160000
+0!
+0A
+0B
+#180000
+1!
+1A
+1B
+0a
+1_
+0`
+0*
+02
+1)
+11
+0+
+03
+0N
+1P
+0E
+1F
+0O
+1C
+0P
+1O
+1Q
+0F
+0Q
+#200000
+0!
+0A
+0B
+#220000
+1!
+1A
+1B
+1a
+1+
+13
+1E
+0C
+1F
+#240000
+0!
+0A
+0B
+#260000
+1!
+1A
+1B
+0a
+1`
+1*
+12
+0+
+03
+1N
+0E
+0F
+1C
+1P
+0N
+0O
+1F
+0P
+1Q
+1O
+0Q
+#280000
+0!
+0A
+0B
+#300000
+1!
+1A
+1B
+1a
+1+
+13
+1E
+0C
+1N
+0F
+1P
+0O
+1Q
+#320000
+0!
+0A
+0B
+#340000
+1!
+1A
+1B
+0a
+1^
+0_
+0`
+0*
+02
+0)
+01
+1(
+10
+0+
+03
+0N
+0P
+1R
+0E
+1F
+1O
+0Q
+1C
+0R
+0O
+1Q
+1S
+0F
+0S
+#360000
+0!
+0A
+0B
+#380000
+1!
+1A
+1B
+1a
+1+
+13
+1E
+0C
+1F
+#400000
+0!
+0A
+0B
+#420000
+1!
+1A
+1B
+0a
+1`
+1*
+12
+0+
+03
+1N
+0E
+0F
+1C
+0N
+1O
+1F
+0O
+#440000
+0!
+0A
+0B
+#460000
+1!
+1A
+1B
+1a
+1+
+13
+1E
+0C
+1N
+0F
+1O
+#480000
+0!
+0A
+0B
+#500000
+1!
+1A
+1B
+0a
+1_
+0`
+0*
+02
+1)
+11
+0+
+03
+0N
+1P
+0E
+1F
+0O
+1C
+0P
+1R
+1O
+0Q
+0F
+0R
+1Q
+1S
+0S
+#520000
+0!
+0A
+0B
+#540000
+1!
+1A
+1B
+1a
+1+
+13
+1E
+0C
+1F
+#560000
+0!
+0A
+0B
+#580000
+1!
+1A
+1B
+0a
+1`
+1*
+12
+0+
+03
+1N
+0E
+0F
+1C
+1P
+0N
+0O
+1F
+1R
+0P
+0Q
+1O
+0R
+1S
+1Q
+0S
+#600000
+0!
+0A
+0B
+#620000
+1!
+1A
+1B
+1a
+1+
+13
+1K
+1E
+0C
+1N
+1X
+0L
+0F
+1P
+0O
+0H
+1R
+0Q
+1S
+#640000
+0!
+0A
+0B
+#660000
+1!
+1A
+1B
+0b
+0c
+0a
+0^
+0_
+0`
+0*
+02
+0)
+01
+0(
+00
+0+
+03
+0M
+0K
+0N
+0P
+0R
+0E
+0Y
+1F
+1O
+1Q
+1C
+05
+0O
+0Q
+0S
+0F
+#680000
+0!
+0A
+0B
+#700000
+1!
+1A
+1B
+#720000
+0!
+0A
+0B
+#740000
+1!
+1A
+1B
+#760000
+0!
+0A
+0B
+#780000
+1!
+1A
+1B
+#800000
+0!
+0A
+0B
+#820000
+1!
+1A
+1B
+#840000
+0!
+0A
+0B
+#860000
+1!
+1A
+1B
+#880000
+0!
+0A
+0B
+#900000
+1!
+1A
+1B
+#920000
+0!
+0A
+0B
+#940000
+1!
+1A
+1B
+#960000
+0!
+0A
+0B
+#980000
+1!
+1A
+1B
+#1000000
