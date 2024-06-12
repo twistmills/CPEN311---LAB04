@@ -5,7 +5,6 @@ parameter M = 8
 )
 
 (
-input clk, 
 input [1:0] source,
 
 // S Memory ports
@@ -21,16 +20,15 @@ input [(M-1):0] init_data,
 //output init_q; // May not need
 
 // Interaction with shuffle module
-input shuffle_start,
 input [(M-1):0] shuffle_address, shuffle_data,
 input shuffle_wren,
-output shuffle_q,
+output [(M-1):0] shuffle_q,
 
 // Interaction with the decode module
 input [(M-1):0] decode_address,
 //input [(M-1):0] decode_data;
 //input decode_wren;
-output decode_q // May not need
+output [(M-1):0] decode_q // May not need
 
 );
 
@@ -40,8 +38,12 @@ localparam INIT     = 2'b01;
 localparam SHUFFLE  = 2'b10;
 localparam DECODE   = 2'b11;
 
+
+assign decode_q  = s_q;
+assign shuffle_q = s_q;
+
 // Set output assignments 
-always_comb
+always @(*)
 begin
 	
 	case(source)
@@ -56,13 +58,14 @@ begin
 			s_data    = shuffle_data;
 			s_address = shuffle_address;
 			s_wren    = shuffle_wren;
-			shuffle_q = s_q;
+			//shuffle_q = s_q;
 			
 		end
 		DECODE: begin
+			s_data    = 8'b0;
 			s_address = decode_address;
 			s_wren    = 1'b0;
-			decode_q  = s_q;
+			//decode_q  = s_q;
 			
 			
 		end
