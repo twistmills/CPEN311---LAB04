@@ -1,77 +1,81 @@
-Analysis & Synthesis report for rc4
-Sun May 29 17:39:38 2016
-Quartus II 64-Bit Version 14.1.0 Build 186 12/03/2014 SJ Full Version
+Analysis & Elaboration report for rc4
+Wed Jun 12 14:43:38 2024
+Quartus Prime Version 16.1.2 Build 203 01/18/2017 SJ Lite Edition
 
 
 ---------------------
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Synthesis Summary
-  3. Analysis & Synthesis Settings
-  4. Analysis & Synthesis Default Parameter Settings
-  5. Parallel Compilation
-  6. Analysis & Synthesis Source Files Read
-  7. Analysis & Synthesis Resource Usage Summary
-  8. Analysis & Synthesis Resource Utilization by Entity
-  9. General Register Statistics
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Analysis & Elaboration Settings
+  5. Analysis & Elaboration Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 1991-2014 Altera Corporation. All rights reserved.
-Your use of Altera Corporation's design tools, logic functions 
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
-to the terms and conditions of the Altera Program License 
-Subscription Agreement, the Altera Quartus II License Agreement,
-the Altera MegaCore Function License Agreement, or other 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
 applicable license agreement, including, without limitation, 
 that your use is for the sole purpose of programming logic 
-devices manufactured by Altera and sold by Altera or its 
+devices manufactured by Intel and sold by Intel or its 
 authorized distributors.  Please refer to the applicable 
 agreement for further details.
 
 
 
-+-------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                  ;
-+---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun May 29 17:39:38 2016       ;
-; Quartus II 64-Bit Version       ; 14.1.0 Build 186 12/03/2014 SJ Full Version ;
-; Revision Name                   ; rc4                                         ;
-; Top-level Entity Name           ; ksa                                         ;
-; Family                          ; Cyclone V                                   ;
-; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 0                                           ;
-; Total pins                      ; 67                                          ;
-; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0                                           ;
-; Total DSP Blocks                ; 0                                           ;
-; Total HSSI RX PCSs              ; 0                                           ;
-; Total HSSI PMA RX Deserializers ; 0                                           ;
-; Total HSSI TX PCSs              ; 0                                           ;
-; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0                                           ;
-; Total DLLs                      ; 0                                           ;
-+---------------------------------+---------------------------------------------+
++-----------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                              ;
++-------------------------------+---------------------------------------------+
+; Analysis & Elaboration Status ; Successful - Wed Jun 12 14:43:38 2024       ;
+; Quartus Prime Version         ; 16.1.2 Build 203 01/18/2017 SJ Lite Edition ;
+; Revision Name                 ; rc4                                         ;
+; Top-level Entity Name         ; ksa                                         ;
+; Family                        ; Cyclone V                                   ;
+; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
+; Total registers               ; N/A until Partition Merge                   ;
+; Total pins                    ; N/A until Partition Merge                   ;
+; Total virtual pins            ; N/A until Partition Merge                   ;
+; Total block memory bits       ; N/A until Partition Merge                   ;
+; Total PLLs                    ; N/A until Partition Merge                   ;
+; Total DLLs                    ; N/A until Partition Merge                   ;
++-------------------------------+---------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                             ;
+; Analysis & Elaboration Settings                                                                                           ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
 ; Top-level entity name                                                           ; ksa                ; rc4                ;
-; Family name                                                                     ; Cyclone V          ; Cyclone IV GX      ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Verilog Show LMF Mapping Messages                                               ; Off                ;                    ;
 ; Verilog Version                                                                 ; SystemVerilog_2005 ; Verilog_2001       ;
 ; Extract Verilog State Machines                                                  ; Off                ; On                 ;
@@ -88,7 +92,7 @@ agreement for further details.
 ; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
 ; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
 ; Preserve fewer node names                                                       ; On                 ; On                 ;
-; Disable OpenCore Plus hardware evaluation                                       ; Off                ; Off                ;
+; OpenCore Plus hardware evaluation                                               ; Enable             ; Enable             ;
 ; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
 ; State Machine Processing                                                        ; Auto               ; Auto               ;
 ; Safe State Machine                                                              ; Off                ; Off                ;
@@ -147,236 +151,42 @@ agreement for further details.
 ; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
 ; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
 ; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
-; Synthesis Seed                                                                  ; 1                  ; 1                  ;
 ; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
 ; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+-------------------------------------------------+
-; Analysis & Synthesis Default Parameter Settings ;
-+----------------------+--------------------------+
-; Name                 ; Setting                  ;
-+----------------------+--------------------------+
-; CYCLONEII_SAFE_WRITE ; RESTRUCTURE              ;
-+----------------------+--------------------------+
-
-
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-;     Processors 2-8         ;   0.0%      ;
-+----------------------------+-------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                 ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                                          ; Library ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------------------+---------+
-; ksa.vhd                          ; yes             ; User VHDL File  ; C:/ubc/new_cpen_311/Labs_and_Activities_Jeff-2016-05-06_c/Labs_and_Activities_Jeff/Steve_Lab6/template_de1soc/ksa.vhd ;         ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------------------+---------+
-
-
-+--------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary            ;
-+---------------------------------------------+----------+
-; Resource                                    ; Usage    ;
-+---------------------------------------------+----------+
-; Estimate of Logic utilization (ALMs needed) ; 0        ;
-;                                             ;          ;
-; Combinational ALUT usage for logic          ; 0        ;
-;     -- 7 input functions                    ; 0        ;
-;     -- 6 input functions                    ; 0        ;
-;     -- 5 input functions                    ; 0        ;
-;     -- 4 input functions                    ; 0        ;
-;     -- <=3 input functions                  ; 0        ;
-;                                             ;          ;
-; Dedicated logic registers                   ; 0        ;
-;                                             ;          ;
-; I/O pins                                    ; 67       ;
-;                                             ;          ;
-; Total DSP Blocks                            ; 0        ;
-;                                             ;          ;
-; Maximum fan-out node                        ; CLOCK_50 ;
-; Maximum fan-out                             ; 1        ;
-; Total fan-out                               ; 67       ;
-; Average fan-out                             ; 0.50     ;
-+---------------------------------------------+----------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                       ;
-+----------------------------+-------------------+--------------+-------------------+------------+------+--------------+---------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
-+----------------------------+-------------------+--------------+-------------------+------------+------+--------------+---------------------+--------------+
-; |ksa                       ; 0 (0)             ; 0 (0)        ; 0                 ; 0          ; 67   ; 0            ; |ksa                ; work         ;
-+----------------------------+-------------------+--------------+-------------------+------------+------+--------------+---------------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 1                           ;
-;     normal            ; 1                           ;
-;         0 data inputs ; 1                           ;
-; boundary_port         ; 67                          ;
-;                       ;                             ;
-; Max LUT depth         ; 0.00                        ;
-; Average LUT depth     ; 0.00                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
-
-
-+-------------------------------+
-; Analysis & Synthesis Messages ;
-+-------------------------------+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
 Info: *******************************************************************
-Info: Running Quartus II 64-Bit Analysis & Synthesis
-    Info: Version 14.1.0 Build 186 12/03/2014 SJ Full Version
-    Info: Processing started: Sun May 29 17:39:26 2016
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off rc4 -c rc4
-Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
+Info: Running Quartus Prime Analysis & Elaboration
+    Info: Version 16.1.2 Build 203 01/18/2017 SJ Lite Edition
+    Info: Processing started: Wed Jun 12 14:43:32 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off rc4 -c rc4 --analysis_and_elaboration
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file ksa.vhd
-    Info (12022): Found design unit 1: ksa-rtl
-    Info (12023): Found entity 1: ksa
+    Info (12022): Found design unit 1: ksa-rtl File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/ksa.vhd Line: 19
+    Info (12023): Found entity 1: ksa File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/ksa.vhd Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file s_memory.v
+    Info (12023): Found entity 1: s_memory File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/s_memory.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file shared_s_access.sv
+    Info (12023): Found entity 1: shared_s_access File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/shared_s_access.sv Line: 1
 Info (12127): Elaborating entity "ksa" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at ksa.vhd(10): used implicit default value for signal "LEDR" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at ksa.vhd(11): used implicit default value for signal "HEX0" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at ksa.vhd(12): used implicit default value for signal "HEX1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at ksa.vhd(13): used implicit default value for signal "HEX2" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at ksa.vhd(14): used implicit default value for signal "HEX3" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at ksa.vhd(15): used implicit default value for signal "HEX4" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at ksa.vhd(16): used implicit default value for signal "HEX5" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10036): Verilog HDL or VHDL warning at ksa.vhd(29): object "clk" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at ksa.vhd(29): object "reset_n" assigned a value but never read
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LEDR[0]" is stuck at GND
-    Warning (13410): Pin "LEDR[1]" is stuck at GND
-    Warning (13410): Pin "LEDR[2]" is stuck at GND
-    Warning (13410): Pin "LEDR[3]" is stuck at GND
-    Warning (13410): Pin "LEDR[4]" is stuck at GND
-    Warning (13410): Pin "LEDR[5]" is stuck at GND
-    Warning (13410): Pin "LEDR[6]" is stuck at GND
-    Warning (13410): Pin "LEDR[7]" is stuck at GND
-    Warning (13410): Pin "LEDR[8]" is stuck at GND
-    Warning (13410): Pin "LEDR[9]" is stuck at GND
-    Warning (13410): Pin "HEX0[0]" is stuck at GND
-    Warning (13410): Pin "HEX0[1]" is stuck at GND
-    Warning (13410): Pin "HEX0[2]" is stuck at GND
-    Warning (13410): Pin "HEX0[3]" is stuck at GND
-    Warning (13410): Pin "HEX0[4]" is stuck at GND
-    Warning (13410): Pin "HEX0[5]" is stuck at GND
-    Warning (13410): Pin "HEX0[6]" is stuck at GND
-    Warning (13410): Pin "HEX1[0]" is stuck at GND
-    Warning (13410): Pin "HEX1[1]" is stuck at GND
-    Warning (13410): Pin "HEX1[2]" is stuck at GND
-    Warning (13410): Pin "HEX1[3]" is stuck at GND
-    Warning (13410): Pin "HEX1[4]" is stuck at GND
-    Warning (13410): Pin "HEX1[5]" is stuck at GND
-    Warning (13410): Pin "HEX1[6]" is stuck at GND
-    Warning (13410): Pin "HEX2[0]" is stuck at GND
-    Warning (13410): Pin "HEX2[1]" is stuck at GND
-    Warning (13410): Pin "HEX2[2]" is stuck at GND
-    Warning (13410): Pin "HEX2[3]" is stuck at GND
-    Warning (13410): Pin "HEX2[4]" is stuck at GND
-    Warning (13410): Pin "HEX2[5]" is stuck at GND
-    Warning (13410): Pin "HEX2[6]" is stuck at GND
-    Warning (13410): Pin "HEX3[0]" is stuck at GND
-    Warning (13410): Pin "HEX3[1]" is stuck at GND
-    Warning (13410): Pin "HEX3[2]" is stuck at GND
-    Warning (13410): Pin "HEX3[3]" is stuck at GND
-    Warning (13410): Pin "HEX3[4]" is stuck at GND
-    Warning (13410): Pin "HEX3[5]" is stuck at GND
-    Warning (13410): Pin "HEX3[6]" is stuck at GND
-    Warning (13410): Pin "HEX4[0]" is stuck at GND
-    Warning (13410): Pin "HEX4[1]" is stuck at GND
-    Warning (13410): Pin "HEX4[2]" is stuck at GND
-    Warning (13410): Pin "HEX4[3]" is stuck at GND
-    Warning (13410): Pin "HEX4[4]" is stuck at GND
-    Warning (13410): Pin "HEX4[5]" is stuck at GND
-    Warning (13410): Pin "HEX4[6]" is stuck at GND
-    Warning (13410): Pin "HEX5[0]" is stuck at GND
-    Warning (13410): Pin "HEX5[1]" is stuck at GND
-    Warning (13410): Pin "HEX5[2]" is stuck at GND
-    Warning (13410): Pin "HEX5[3]" is stuck at GND
-    Warning (13410): Pin "HEX5[4]" is stuck at GND
-    Warning (13410): Pin "HEX5[5]" is stuck at GND
-    Warning (13410): Pin "HEX5[6]" is stuck at GND
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (15752): Ignored 12 Virtual Pin logic option assignments
-    Warning (15751): Ignored Virtual Pin assignment to "LCD_RW".
-    Warning (15751): Ignored Virtual Pin assignment to "LCD_DATA[4]".
-    Warning (15751): Ignored Virtual Pin assignment to "LCD_RS".
-    Warning (15751): Ignored Virtual Pin assignment to "LCD_ON".
-    Warning (15751): Ignored Virtual Pin assignment to "LCD_DATA[5]".
-    Warning (15751): Ignored Virtual Pin assignment to "LCD_EN".
-    Warning (15751): Ignored Virtual Pin assignment to "LCD_DATA[1]".
-    Warning (15751): Ignored Virtual Pin assignment to "LCD_DATA[6]".
-    Warning (15751): Ignored Virtual Pin assignment to "LCD_DATA[0]".
-    Warning (15751): Ignored Virtual Pin assignment to "LCD_DATA[7]".
-    Warning (15751): Ignored Virtual Pin assignment to "LCD_DATA[3]".
-    Warning (15751): Ignored Virtual Pin assignment to "LCD_DATA[2]".
-Warning (21074): Design contains 15 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "CLOCK_50"
-    Warning (15610): No output dependent on input pin "KEY[0]"
-    Warning (15610): No output dependent on input pin "KEY[1]"
-    Warning (15610): No output dependent on input pin "KEY[2]"
-    Warning (15610): No output dependent on input pin "KEY[3]"
-    Warning (15610): No output dependent on input pin "SW[0]"
-    Warning (15610): No output dependent on input pin "SW[1]"
-    Warning (15610): No output dependent on input pin "SW[2]"
-    Warning (15610): No output dependent on input pin "SW[3]"
-    Warning (15610): No output dependent on input pin "SW[4]"
-    Warning (15610): No output dependent on input pin "SW[5]"
-    Warning (15610): No output dependent on input pin "SW[6]"
-    Warning (15610): No output dependent on input pin "SW[7]"
-    Warning (15610): No output dependent on input pin "SW[8]"
-    Warning (15610): No output dependent on input pin "SW[9]"
-Info (21057): Implemented 67 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 15 input pins
-    Info (21059): Implemented 52 output pins
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 91 warnings
-    Info: Peak virtual memory: 708 megabytes
-    Info: Processing ended: Sun May 29 17:39:38 2016
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:25
+Warning (10541): VHDL Signal Declaration warning at ksa.vhd(10): used implicit default value for signal "LEDR" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/ksa.vhd Line: 10
+Warning (10541): VHDL Signal Declaration warning at ksa.vhd(11): used implicit default value for signal "HEX0" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/ksa.vhd Line: 11
+Warning (10541): VHDL Signal Declaration warning at ksa.vhd(12): used implicit default value for signal "HEX1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/ksa.vhd Line: 12
+Warning (10541): VHDL Signal Declaration warning at ksa.vhd(13): used implicit default value for signal "HEX2" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/ksa.vhd Line: 13
+Warning (10541): VHDL Signal Declaration warning at ksa.vhd(14): used implicit default value for signal "HEX3" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/ksa.vhd Line: 14
+Warning (10541): VHDL Signal Declaration warning at ksa.vhd(15): used implicit default value for signal "HEX4" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/ksa.vhd Line: 15
+Warning (10541): VHDL Signal Declaration warning at ksa.vhd(16): used implicit default value for signal "HEX5" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/ksa.vhd Line: 16
+Warning (10036): Verilog HDL or VHDL warning at ksa.vhd(29): object "clk" assigned a value but never read File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/ksa.vhd Line: 29
+Warning (10036): Verilog HDL or VHDL warning at ksa.vhd(29): object "reset_n" assigned a value but never read File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/ksa.vhd Line: 29
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 10 warnings
+    Info: Peak virtual memory: 4847 megabytes
+    Info: Processing ended: Wed Jun 12 14:43:38 2024
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:04
 
 
