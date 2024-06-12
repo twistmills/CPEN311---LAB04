@@ -21,7 +21,7 @@ s_memory_init MUT(
 	.data(data),
 	.write_enable(write_enable),
 	.start(start),
-	.finish(sinish)
+	.finish(finish)
 ); 
 
 endmodule 

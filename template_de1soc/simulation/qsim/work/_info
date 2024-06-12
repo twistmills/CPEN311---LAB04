@@ -9,13 +9,13 @@ z2
 cModel Technology
 Z0 dC:/Users/twist/OneDrive/Documents/GitHub/CPEN311---LAB04/template_de1soc/simulation/qsim
 vs_memory_init_tb
-Z1 !s110 1718228316
+Z1 !s110 1718229908
 !i10b 1
-!s100 @jlnB^I@JB^I8ZnLKe1lg3
-IgA4ENDk1EF[_TXWZLWmDI3
+!s100 iSNhhoT]16mYZg@4FaCoi1
+IRHA`a939[c:ch<8?>liB?3
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1718228315
+w1718229907
 8rc4.vo
 Frc4.vo
 L0 32
@@ -23,7 +23,7 @@ Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1718228316.000000
+Z4 !s108 1718229908.000000
 !s107 rc4.vo|
 !s90 -work|work|rc4.vo|
 !i113 1
@@ -32,11 +32,11 @@ Z6 tCvgOpt 0
 vs_memory_init_tb_vlg_vec_tst
 R1
 !i10b 1
-!s100 eUn02jo1:RH4]EU;^c@N92
-I]0I>bmI9V^R9B`Bb>=EB`1
+!s100 Vl??[30Q=N0emhQ<8?T]Z2
+IYb`IZYce5;T=Di=mXEPkS0
 R2
 R0
-w1718228314
+w1718229906
 8Waveform.vwf.vt
 FWaveform.vwf.vt
 L0 30

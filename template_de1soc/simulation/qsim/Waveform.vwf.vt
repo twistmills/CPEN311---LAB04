@@ -19,7 +19,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "06/12/2024 14:38:34"
+// Generated on "06/12/2024 15:05:05"
                                                                                 
 // Verilog Test Bench (with test vectors) for design :                          s_memory_init_tb
 // 
@@ -59,14 +59,16 @@ end
 always
 begin
 	clk = 1'b0;
-	clk = #20000 1'b1;
-	#20000;
+	clk = #10000 1'b1;
+	#10000;
 end 
 
 // reset
 initial
 begin
 	reset = 1'b0;
+	reset = #170000 1'b1;
+	reset = #20000 1'b0;
 end 
 
 // start
@@ -74,6 +76,8 @@ initial
 begin
 	start = 1'b1;
 	start = #110000 1'b0;
+	start = #150000 1'b1;
+	start = #20000 1'b0;
 end 
 endmodule
 

@@ -16,13 +16,13 @@ module s_memory_init(
 
 localparam IDLE  = 2'b01;
 localparam START = 2'b10;
-localparam count_total = 8'hFF;
+localparam count_total = 8'h0F;
 
 // modify finish??
-assign finish <= STATE[0] 
+assign finish = state[0]; 
 assign address = count;
 assign data = count;
-assign write_enable <= state[1];
+assign write_enable = state[1];
 
 logic [7:0] count;
 logic [1:0] state;
