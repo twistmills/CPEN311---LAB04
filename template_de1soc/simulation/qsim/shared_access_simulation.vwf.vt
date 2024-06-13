@@ -19,7 +19,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "06/12/2024 15:48:16"
+// Generated on "06/13/2024 14:42:49"
                                                                                 
 // Verilog Test Bench (with test vectors) for design :                          shared_s_access
 // 
@@ -30,7 +30,6 @@
 module shared_s_access_vlg_vec_tst();
 // constants                                           
 // general purpose registers
-reg clk;
 reg [7:0] decode_address;
 reg [7:0] init_address;
 reg [7:0] init_data;
@@ -49,7 +48,6 @@ wire [7:0] shuffle_q;
 // assign statements (if any)                          
 shared_s_access i1 (
 // port map - connection between master ports and signals/registers   
-	.clk(clk),
 	.decode_address(decode_address),
 	.decode_q(decode_q),
 	.init_address(init_address),

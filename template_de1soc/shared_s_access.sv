@@ -58,21 +58,19 @@ begin
 			s_data    = shuffle_data;
 			s_address = shuffle_address;
 			s_wren    = shuffle_wren;
-			//shuffle_q = s_q;
 			
 		end
 		DECODE: begin
 			s_data    = 8'b0;
 			s_address = decode_address;
 			s_wren    = 1'b0;
-			//decode_q  = s_q;
 			
 			
 		end
 		default: begin
 			s_data    = 8'b0;
 			s_address = 8'b0;
-			s_wren    = 1'b0;
+			s_wren    = 1'b1;
 		end
 	endcase
 end

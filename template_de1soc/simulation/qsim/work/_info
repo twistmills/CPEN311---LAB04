@@ -8,45 +8,213 @@ z2
 !i10f 100
 cModel Technology
 Z0 dC:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/simulation/qsim
-vshared_s_access
-Z1 !s110 1718232497
+vdecoder_core_control
+Z1 !s110 1718314834
 !i10b 1
-!s100 h_OMbZS`D^Cl@e4R_Dhm^1
-I3iQZ290JW^<SlI;1P90J62
+!s100 W^?faA`c[:D<@72DRF1fe0
+Ic:ADARPnDDkn?;f``^2HM2
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-Z3 w1718232496
-8rc4.vo
-Frc4.vo
-L0 32
-Z4 OV;L;10.5b;63
+w1718314834
+Z3 8rc4.vo
+Z4 Frc4.vo
+Z5 L0 32
+Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z5 !s108 1718232497.000000
-!s107 rc4.vo|
-!s90 -work|work|rc4.vo|
+Z7 !s108 1718314834.000000
+Z8 !s107 rc4.vo|
+Z9 !s90 -work|work|rc4.vo|
 !i113 1
-Z6 o-work work
-Z7 tCvgOpt 0
-vshared_s_access_vlg_vec_tst
+Z10 o-work work
+Z11 tCvgOpt 0
+vdecoder_core_control_vlg_vec_tst
 R1
 !i10b 1
-!s100 0gS3VLgbe1EGnnAFMaPkk2
-IV9NlTGKLZ7GFJ:H=P5@W31
+!s100 LW9SL59l@oz9ezMfkd^;L2
+IkzQnGJ70WdjFB_:4CK?LY3
 R2
 R0
-R3
-8shared_access_simulation.vwf.vt
-Fshared_access_simulation.vwf.vt
-L0 30
-R4
+w1718314833
+Z12 8decode_core_control_simulation.vwf.vt
+Z13 Fdecode_core_control_simulation.vwf.vt
+Z14 L0 30
+R6
 r1
 !s85 0
 31
+R7
+Z15 !s107 decode_core_control_simulation.vwf.vt|
+Z16 !s90 -work|work|decode_core_control_simulation.vwf.vt|
+!i113 1
+R10
+R11
+vksa
+Z17 !s110 1718314760
+!i10b 1
+!s100 6a@d9EBiVhRHgWoZ^63oJ1
+IZA;4^>H[ARDzTS29Ad6U_3
+R2
+R0
+w1718314760
+R3
+R4
 R5
+R6
+r1
+!s85 0
+31
+Z18 !s108 1718314760.000000
+R8
+R9
+!i113 1
+R10
+R11
+vksa_vlg_vec_tst
+R17
+!i10b 1
+!s100 YA4af>?>S^EC18[h:D:EY0
+I6oQd]^7F1P3kfGLIcQUY<2
+R2
+R0
+w1718314759
+R12
+R13
+R14
+R6
+r1
+!s85 0
+31
+R18
+R15
+R16
+!i113 1
+R10
+R11
+vs_memory_init
+Z19 !s110 1718308969
+!i10b 1
+!s100 ;b[Y4X>h7m4O1Fd4O`8j^2
+Ii:h]QHO`ZDc[P;5;UDNPX3
+R2
+R0
+w1718308969
+R3
+R4
+R5
+R6
+r1
+!s85 0
+31
+Z20 !s108 1718308969.000000
+R8
+R9
+!i113 1
+R10
+R11
+vs_memory_init_vlg_vec_tst
+R19
+!i10b 1
+!s100 HO>ZFPoXnW1_nBIE_la930
+IE^G]GUWd9Ln@7EVm4L`QW1
+R2
+R0
+w1718308968
+8memory_init_simulation.vwf.vt
+Fmemory_init_simulation.vwf.vt
+R14
+R6
+r1
+!s85 0
+31
+R20
+!s107 memory_init_simulation.vwf.vt|
+!s90 -work|work|memory_init_simulation.vwf.vt|
+!i113 1
+R10
+R11
+vshared_s_access
+Z21 !s110 1718314970
+!i10b 1
+!s100 kH8BXh_9VofEG8HAF>1B`2
+IJBc3ke`cOVgnKfFIFXH1[2
+R2
+R0
+Z22 w1718314969
+R3
+R4
+R5
+R6
+r1
+!s85 0
+31
+Z23 !s108 1718314970.000000
+R8
+R9
+!i113 1
+R10
+R11
+vshared_s_access_vlg_vec_tst
+R21
+!i10b 1
+!s100 dXVYgQU4aDF=JUYB^2REg1
+IaRI8=WM1UJ3P]zCXCF;6Z0
+R2
+R0
+R22
+8shared_access_simulation.vwf.vt
+Fshared_access_simulation.vwf.vt
+R14
+R6
+r1
+!s85 0
+31
+R23
 !s107 shared_access_simulation.vwf.vt|
 !s90 -work|work|shared_access_simulation.vwf.vt|
 !i113 1
+R10
+R11
+vshuffle_memory_with_key
+Z24 !s110 1718313582
+!i10b 1
+!s100 V]k>DA4cHX1?9O>B_oh4F1
+I=@4P7DC79SC[c]X2]EdYU1
+R2
+R0
+Z25 w1718313582
+R3
+R4
+R5
 R6
-R7
+r1
+!s85 0
+31
+Z26 !s108 1718313582.000000
+R8
+R9
+!i113 1
+R10
+R11
+vshuffle_memory_with_key_vlg_vec_tst
+R24
+!i10b 1
+!s100 @RQV;QY1m`1FRH?79[32H3
+I6k64;iVVBeH3=ZdU5TU3=1
+R2
+R0
+R25
+8shuffle_simulation.vwf.vt
+Fshuffle_simulation.vwf.vt
+R14
+R6
+r1
+!s85 0
+31
+R26
+!s107 shuffle_simulation.vwf.vt|
+!s90 -work|work|shuffle_simulation.vwf.vt|
+!i113 1
+R10
+R11

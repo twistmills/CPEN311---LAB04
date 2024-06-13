@@ -17,10 +17,10 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 16.1.2 Build 203 01/18/2017 SJ Lite Edition"
 
-// DATE "06/12/2024 15:48:16"
+// DATE "06/13/2024 14:42:49"
 
 // 
-// Device: Altera 5CGXFC7C7F23C8 Package FBGA484
+// Device: Altera 5CSEMA5F31C6 Package FBGA896
 // 
 
 // 
@@ -30,7 +30,6 @@
 `timescale 1 ps/ 1 ps
 
 module shared_s_access (
-	clk,
 	source,
 	s_address,
 	s_data,
@@ -44,7 +43,6 @@ module shared_s_access (
 	shuffle_q,
 	decode_address,
 	decode_q);
-input 	clk;
 input 	[1:0] source;
 output 	[7:0] s_address;
 output 	[7:0] s_data;
@@ -70,7 +68,6 @@ assign unknown = 1'bx;
 tri1 devclrn;
 tri1 devpor;
 tri1 devoe;
-wire \clk~input_o ;
 wire \s_address[0]~output_o ;
 wire \s_address[1]~output_o ;
 wire \s_address[2]~output_o ;
@@ -415,7 +412,7 @@ defparam \s_data[7]~output .shift_series_termination_control = "false";
 // synopsys translate_on
 
 cyclonev_io_obuf \s_wren~output (
-	.i(!\Mux16~0_combout ),
+	.i(\Mux16~0_combout ),
 	.oe(vcc),
 	.dynamicterminationcontrol(gnd),
 	.seriesterminationcontrol(16'b0000000000000000),
@@ -1477,7 +1474,7 @@ defparam \shuffle_wren~input .simulate_z_as = "z";
 
 cyclonev_lcell_comb \Mux16~0 (
 // Equation(s):
-// \Mux16~0_combout  = (!\source[0]~input_o  & ((!\source[1]~input_o ) # (!\shuffle_wren~input_o ))) # (\source[0]~input_o  & (\source[1]~input_o ))
+// \Mux16~0_combout  = (!\source[1]~input_o ) # ((!\source[0]~input_o  & \shuffle_wren~input_o ))
 
 	.dataa(!\source[0]~input_o ),
 	.datab(!\source[1]~input_o ),
@@ -1494,7 +1491,7 @@ cyclonev_lcell_comb \Mux16~0 (
 	.shareout());
 // synopsys translate_off
 defparam \Mux16~0 .extended_lut = "off";
-defparam \Mux16~0 .lut_mask = 64'hB9B9B9B9B9B9B9B9;
+defparam \Mux16~0 .lut_mask = 64'hCECECECECECECECE;
 defparam \Mux16~0 .shared_arith = "off";
 // synopsys translate_on
 
@@ -1576,16 +1573,6 @@ cyclonev_io_ibuf \s_q[7]~input (
 // synopsys translate_off
 defparam \s_q[7]~input .bus_hold = "false";
 defparam \s_q[7]~input .simulate_z_as = "z";
-// synopsys translate_on
-
-cyclonev_io_ibuf \clk~input (
-	.i(clk),
-	.ibar(gnd),
-	.dynamicterminationcontrol(gnd),
-	.o(\clk~input_o ));
-// synopsys translate_off
-defparam \clk~input .bus_hold = "false";
-defparam \clk~input .simulate_z_as = "z";
 // synopsys translate_on
 
 assign s_address[0] = \s_address[0]~output_o ;
