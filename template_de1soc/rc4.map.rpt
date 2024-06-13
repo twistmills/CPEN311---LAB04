@@ -1,5 +1,5 @@
 Analysis & Synthesis report for rc4
-Wed Jun 12 17:41:35 2024
+Thu Jun 13 15:04:44 2024
 Quartus Prime Version 16.1.2 Build 203 01/18/2017 SJ Lite Edition
 
 
@@ -21,15 +21,19 @@ Quartus Prime Version 16.1.2 Build 203 01/18/2017 SJ Lite Edition
  13. Multiplexer Restructuring Statistics (Restructuring Performed)
  14. Source assignments for s_memory:s_memory_inst|altsyncram:altsyncram_component|altsyncram_pvp1:auto_generated|altsyncram_4fg2:altsyncram1
  15. Parameter Settings for User Entity Instance: s_memory:s_memory_inst|altsyncram:altsyncram_component
- 16. altsyncram Parameter Settings by Entity Instance
- 17. Port Connectivity Checks: "s_memory_init:s_mem_init_inst"
- 18. Port Connectivity Checks: "s_memory:s_memory_inst"
- 19. Port Connectivity Checks: "SevenSegmentDisplayDecoder:sseg"
- 20. In-System Memory Content Editor Settings
- 21. Post-Synthesis Netlist Statistics for Top Partition
- 22. Elapsed Time Per Partition
- 23. Analysis & Synthesis Messages
- 24. Analysis & Synthesis Suppressed Messages
+ 16. Parameter Settings for User Entity Instance: shared_s_access:shared_access_inst
+ 17. Parameter Settings for Inferred Entity Instance: shuffle_memory_with_key:shuffle_mem_inst|lpm_divide:Mod0
+ 18. altsyncram Parameter Settings by Entity Instance
+ 19. Port Connectivity Checks: "decoder_core_control:decoder_core_inst"
+ 20. Port Connectivity Checks: "shared_s_access:shared_access_inst"
+ 21. Port Connectivity Checks: "shuffle_memory_with_key:shuffle_mem_inst"
+ 22. Port Connectivity Checks: "s_memory_init:s_mem_init_inst"
+ 23. Port Connectivity Checks: "SevenSegmentDisplayDecoder:sseg"
+ 24. In-System Memory Content Editor Settings
+ 25. Post-Synthesis Netlist Statistics for Top Partition
+ 26. Elapsed Time Per Partition
+ 27. Analysis & Synthesis Messages
+ 28. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -56,13 +60,13 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Jun 12 17:41:35 2024       ;
+; Analysis & Synthesis Status     ; Successful - Thu Jun 13 15:04:44 2024       ;
 ; Quartus Prime Version           ; 16.1.2 Build 203 01/18/2017 SJ Lite Edition ;
 ; Revision Name                   ; rc4                                         ;
 ; Top-level Entity Name           ; ksa                                         ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 134                                         ;
+; Total registers                 ; 197                                         ;
 ; Total pins                      ; 67                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 2,048                                       ;
@@ -185,10 +189,13 @@ agreement for further details.
 +--------------------------------------------------------------------+-----------------+----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+-------------+
 ; File Name with User-Entered Path                                   ; Used in Netlist ; File Type                                    ; File Name with Absolute Path                                                                                                      ; Library     ;
 +--------------------------------------------------------------------+-----------------+----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+-------------+
+; shuffle_memory_with_key.sv                                         ; yes             ; User SystemVerilog HDL File                  ; C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/shuffle_memory_with_key.sv                                         ;             ;
 ; Our Code/s_memory_init.sv                                          ; yes             ; User SystemVerilog HDL File                  ; C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/Our Code/s_memory_init.sv                                          ;             ;
+; shared_s_access.sv                                                 ; yes             ; User SystemVerilog HDL File                  ; C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/shared_s_access.sv                                                 ;             ;
 ; SevenSegmentDisplayDecoder.v                                       ; yes             ; User Verilog HDL File                        ; C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/SevenSegmentDisplayDecoder.v                                       ;             ;
 ; ksa.sv                                                             ; yes             ; User SystemVerilog HDL File                  ; C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/ksa.sv                                                             ;             ;
 ; s_memory.v                                                         ; yes             ; User Wizard-Generated File                   ; C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/s_memory.v                                                         ;             ;
+; decoder_core_control.sv                                            ; yes             ; User SystemVerilog HDL File                  ; C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/decoder_core_control.sv                                            ;             ;
 ; altsyncram.tdf                                                     ; yes             ; Megafunction                                 ; g:/intelfpga_lite/16.1/quartus/libraries/megafunctions/altsyncram.tdf                                                             ;             ;
 ; stratix_ram_block.inc                                              ; yes             ; Megafunction                                 ; g:/intelfpga_lite/16.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                                      ;             ;
 ; lpm_mux.inc                                                        ; yes             ; Megafunction                                 ; g:/intelfpga_lite/16.1/quartus/libraries/megafunctions/lpm_mux.inc                                                                ;             ;
@@ -212,6 +219,12 @@ agreement for further details.
 ; db/ip/sld73f98f60/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; yes             ; Encrypted Auto-Found VHDL File               ; C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/db/ip/sld73f98f60/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; alt_sld_fab ;
 ; db/ip/sld73f98f60/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/db/ip/sld73f98f60/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; alt_sld_fab ;
 ; sld_jtag_hub.vhd                                                   ; yes             ; Encrypted Megafunction                       ; g:/intelfpga_lite/16.1/quartus/libraries/megafunctions/sld_jtag_hub.vhd                                                           ;             ;
+; lpm_divide.tdf                                                     ; yes             ; Megafunction                                 ; g:/intelfpga_lite/16.1/quartus/libraries/megafunctions/lpm_divide.tdf                                                             ;             ;
+; abs_divider.inc                                                    ; yes             ; Megafunction                                 ; g:/intelfpga_lite/16.1/quartus/libraries/megafunctions/abs_divider.inc                                                            ;             ;
+; sign_div_unsign.inc                                                ; yes             ; Megafunction                                 ; g:/intelfpga_lite/16.1/quartus/libraries/megafunctions/sign_div_unsign.inc                                                        ;             ;
+; db/lpm_divide_62m.tdf                                              ; yes             ; Auto-Generated Megafunction                  ; C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/db/lpm_divide_62m.tdf                                              ;             ;
+; db/sign_div_unsign_9kh.tdf                                         ; yes             ; Auto-Generated Megafunction                  ; C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/db/sign_div_unsign_9kh.tdf                                         ;             ;
+; db/alt_u_div_ose.tdf                                               ; yes             ; Auto-Generated Megafunction                  ; C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/db/alt_u_div_ose.tdf                                               ;             ;
 +--------------------------------------------------------------------+-----------------+----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+-------------+
 
 
@@ -220,16 +233,16 @@ agreement for further details.
 +---------------------------------------------+--------------------------+
 ; Resource                                    ; Usage                    ;
 +---------------------------------------------+--------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 98                       ;
+; Estimate of Logic utilization (ALMs needed) ; 163                      ;
 ;                                             ;                          ;
-; Combinational ALUT usage for logic          ; 160                      ;
+; Combinational ALUT usage for logic          ; 262                      ;
 ;     -- 7 input functions                    ; 1                        ;
-;     -- 6 input functions                    ; 22                       ;
-;     -- 5 input functions                    ; 31                       ;
-;     -- 4 input functions                    ; 33                       ;
-;     -- <=3 input functions                  ; 73                       ;
+;     -- 6 input functions                    ; 33                       ;
+;     -- 5 input functions                    ; 43                       ;
+;     -- 4 input functions                    ; 52                       ;
+;     -- <=3 input functions                  ; 133                      ;
 ;                                             ;                          ;
-; Dedicated logic registers                   ; 134                      ;
+; Dedicated logic registers                   ; 197                      ;
 ;                                             ;                          ;
 ; I/O pins                                    ; 67                       ;
 ; Total MLAB memory bits                      ; 0                        ;
@@ -239,8 +252,8 @@ agreement for further details.
 ;                                             ;                          ;
 ; Maximum fan-out node                        ; altera_internal_jtag~TDO ;
 ; Maximum fan-out                             ; 156                      ;
-; Total fan-out                               ; 1270                     ;
-; Average fan-out                             ; 2.85                     ;
+; Total fan-out                               ; 1871                     ;
+; Average fan-out                             ; 3.07                     ;
 +---------------------------------------------+--------------------------+
 
 
@@ -249,14 +262,21 @@ agreement for further details.
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                             ; Entity Name                       ; Library Name ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
-; |ksa                                                                                                                                    ; 160 (1)             ; 134 (0)                   ; 2048              ; 0          ; 67   ; 0            ; |ksa                                                                                                                                                                                                                                                                                                                                            ; ksa                               ; work         ;
+; |ksa                                                                                                                                    ; 262 (1)             ; 197 (0)                   ; 2048              ; 0          ; 67   ; 0            ; |ksa                                                                                                                                                                                                                                                                                                                                            ; ksa                               ; work         ;
+;    |decoder_core_control:decoder_core_inst|                                                                                             ; 17 (17)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |ksa|decoder_core_control:decoder_core_inst                                                                                                                                                                                                                                                                                                     ; decoder_core_control              ; work         ;
 ;    |s_memory:s_memory_inst|                                                                                                             ; 41 (0)              ; 37 (0)                    ; 2048              ; 0          ; 0    ; 0            ; |ksa|s_memory:s_memory_inst                                                                                                                                                                                                                                                                                                                     ; s_memory                          ; work         ;
 ;       |altsyncram:altsyncram_component|                                                                                                 ; 41 (0)              ; 37 (0)                    ; 2048              ; 0          ; 0    ; 0            ; |ksa|s_memory:s_memory_inst|altsyncram:altsyncram_component                                                                                                                                                                                                                                                                                     ; altsyncram                        ; work         ;
 ;          |altsyncram_pvp1:auto_generated|                                                                                               ; 41 (0)              ; 37 (0)                    ; 2048              ; 0          ; 0    ; 0            ; |ksa|s_memory:s_memory_inst|altsyncram:altsyncram_component|altsyncram_pvp1:auto_generated                                                                                                                                                                                                                                                      ; altsyncram_pvp1                   ; work         ;
 ;             |altsyncram_4fg2:altsyncram1|                                                                                               ; 0 (0)               ; 0 (0)                     ; 2048              ; 0          ; 0    ; 0            ; |ksa|s_memory:s_memory_inst|altsyncram:altsyncram_component|altsyncram_pvp1:auto_generated|altsyncram_4fg2:altsyncram1                                                                                                                                                                                                                          ; altsyncram_4fg2                   ; work         ;
 ;             |sld_mod_ram_rom:mgl_prim2|                                                                                                 ; 41 (23)             ; 37 (28)                   ; 0                 ; 0          ; 0    ; 0            ; |ksa|s_memory:s_memory_inst|altsyncram:altsyncram_component|altsyncram_pvp1:auto_generated|sld_mod_ram_rom:mgl_prim2                                                                                                                                                                                                                            ; sld_mod_ram_rom                   ; work         ;
 ;                |sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|                                                                     ; 18 (18)             ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |ksa|s_memory:s_memory_inst|altsyncram:altsyncram_component|altsyncram_pvp1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr                                                                                                                                                                         ; sld_rom_sr                        ; work         ;
-;    |s_memory_init:s_mem_init_inst|                                                                                                      ; 19 (19)             ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |ksa|s_memory_init:s_mem_init_inst                                                                                                                                                                                                                                                                                                              ; s_memory_init                     ; work         ;
+;    |s_memory_init:s_mem_init_inst|                                                                                                      ; 14 (14)             ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |ksa|s_memory_init:s_mem_init_inst                                                                                                                                                                                                                                                                                                              ; s_memory_init                     ; work         ;
+;    |shared_s_access:shared_access_inst|                                                                                                 ; 17 (17)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ksa|shared_s_access:shared_access_inst                                                                                                                                                                                                                                                                                                         ; shared_s_access                   ; work         ;
+;    |shuffle_memory_with_key:shuffle_mem_inst|                                                                                           ; 73 (35)             ; 55 (55)                   ; 0                 ; 0          ; 0    ; 0            ; |ksa|shuffle_memory_with_key:shuffle_mem_inst                                                                                                                                                                                                                                                                                                   ; shuffle_memory_with_key           ; work         ;
+;       |lpm_divide:Mod0|                                                                                                                 ; 38 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ksa|shuffle_memory_with_key:shuffle_mem_inst|lpm_divide:Mod0                                                                                                                                                                                                                                                                                   ; lpm_divide                        ; work         ;
+;          |lpm_divide_62m:auto_generated|                                                                                                ; 38 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ksa|shuffle_memory_with_key:shuffle_mem_inst|lpm_divide:Mod0|lpm_divide_62m:auto_generated                                                                                                                                                                                                                                                     ; lpm_divide_62m                    ; work         ;
+;             |sign_div_unsign_9kh:divider|                                                                                               ; 38 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ksa|shuffle_memory_with_key:shuffle_mem_inst|lpm_divide:Mod0|lpm_divide_62m:auto_generated|sign_div_unsign_9kh:divider                                                                                                                                                                                                                         ; sign_div_unsign_9kh               ; work         ;
+;                |alt_u_div_ose:divider|                                                                                                  ; 38 (38)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ksa|shuffle_memory_with_key:shuffle_mem_inst|lpm_divide:Mod0|lpm_divide_62m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_ose:divider                                                                                                                                                                                                   ; alt_u_div_ose                     ; work         ;
 ;    |sld_hub:auto_hub|                                                                                                                   ; 99 (1)              ; 87 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |ksa|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                           ; sld_hub                           ; altera_sld   ;
 ;       |alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric| ; 98 (0)              ; 87 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |ksa|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric                                                                                                                                                                                           ; alt_sld_fab_with_jtag_input       ; altera_sld   ;
 ;          |alt_sld_fab:instrumentation_fabric|                                                                                           ; 98 (0)              ; 87 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |ksa|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                                                                                        ; alt_sld_fab                       ; alt_sld_fab  ;
@@ -292,14 +312,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                                                                      ;
-+------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+
-; Register name                                                                                                                                  ; Reason for Removal                     ;
-+------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+
-; s_memory:s_memory_inst|altsyncram:altsyncram_component|altsyncram_pvp1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[3] ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 1                                                                                                          ;                                        ;
-+------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                                                       ;
++------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+; Register name                                                                                                                                  ; Reason for Removal                                                      ;
++------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+; decoder_core_control:decoder_core_inst|state[5,6,10]                                                                                           ; Stuck at GND due to stuck port data_in                                  ;
+; shuffle_memory_with_key:shuffle_mem_inst|secret_key_byte[4,5,7]                                                                                ; Merged with shuffle_memory_with_key:shuffle_mem_inst|secret_key_byte[2] ;
+; shuffle_memory_with_key:shuffle_mem_inst|secret_key_byte[3,6]                                                                                  ; Merged with shuffle_memory_with_key:shuffle_mem_inst|secret_key_byte[0] ;
+; shuffle_memory_with_key:shuffle_mem_inst|secret_key_byte[2]                                                                                    ; Stuck at GND due to stuck port data_in                                  ;
+; s_memory:s_memory_inst|altsyncram:altsyncram_component|altsyncram_pvp1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[3] ; Stuck at GND due to stuck port data_in                                  ;
+; Total Number of Removed Registers = 10                                                                                                         ;                                                                         ;
++------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -307,12 +331,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 134   ;
-; Number of registers using Synchronous Clear  ; 7     ;
-; Number of registers using Synchronous Load   ; 17    ;
+; Total registers                              ; 197   ;
+; Number of registers using Synchronous Clear  ; 31    ;
+; Number of registers using Synchronous Load   ; 33    ;
 ; Number of registers using Asynchronous Clear ; 54    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 92    ;
+; Number of registers using Clock Enable       ; 148   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -333,11 +357,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |ksa|s_memory:s_memory_inst|altsyncram:altsyncram_component|altsyncram_pvp1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_reg[7]                                                ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |ksa|s_memory:s_memory_inst|altsyncram:altsyncram_component|altsyncram_pvp1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_reg[2]                                                ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |ksa|s_memory:s_memory_inst|altsyncram:altsyncram_component|altsyncram_pvp1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[3]                                     ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |ksa|s_memory:s_memory_inst|altsyncram:altsyncram_component|altsyncram_pvp1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_addr_reg[0]                                                ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |ksa|s_memory:s_memory_inst|altsyncram:altsyncram_component|altsyncram_pvp1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|word_counter[4] ;
-; 26:1               ; 4 bits    ; 68 LEs        ; 40 LEs               ; 28 LEs                 ; Yes        ; |ksa|s_memory:s_memory_inst|altsyncram:altsyncram_component|altsyncram_pvp1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|WORD_SR[2]      ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |ksa|s_memory:s_memory_inst|altsyncram:altsyncram_component|altsyncram_pvp1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|word_counter[0] ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |ksa|s_memory_init:s_mem_init_inst|count[5]                                                                                                                                             ;
+; 32:1               ; 8 bits    ; 168 LEs       ; 0 LEs                ; 168 LEs                ; Yes        ; |ksa|shuffle_memory_with_key:shuffle_mem_inst|shuffle_data[5]                                                                                                                           ;
+; 17:1               ; 8 bits    ; 88 LEs        ; 0 LEs                ; 88 LEs                 ; Yes        ; |ksa|shuffle_memory_with_key:shuffle_mem_inst|j[4]                                                                                                                                      ;
+; 33:1               ; 3 bits    ; 66 LEs        ; 27 LEs               ; 39 LEs                 ; Yes        ; |ksa|shuffle_memory_with_key:shuffle_mem_inst|state[1]                                                                                                                                  ;
+; 33:1               ; 2 bits    ; 44 LEs        ; 16 LEs               ; 28 LEs                 ; Yes        ; |ksa|shuffle_memory_with_key:shuffle_mem_inst|state[2]                                                                                                                                  ;
+; 17:1               ; 8 bits    ; 88 LEs        ; 0 LEs                ; 88 LEs                 ; Yes        ; |ksa|shuffle_memory_with_key:shuffle_mem_inst|shuffle_address[4]                                                                                                                        ;
+; 19:1               ; 8 bits    ; 96 LEs        ; 0 LEs                ; 96 LEs                 ; Yes        ; |ksa|shuffle_memory_with_key:shuffle_mem_inst|i[2]                                                                                                                                      ;
+; 26:1               ; 4 bits    ; 68 LEs        ; 40 LEs               ; 28 LEs                 ; Yes        ; |ksa|s_memory:s_memory_inst|altsyncram:altsyncram_component|altsyncram_pvp1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|WORD_SR[1]      ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |ksa|shared_s_access:shared_access_inst|Mux7                                                                                                                                            ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -411,6 +443,39 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: shared_s_access:shared_access_inst ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; M              ; 8     ; Signed Integer                                         ;
++----------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: shuffle_memory_with_key:shuffle_mem_inst|lpm_divide:Mod0 ;
++------------------------+----------------+-----------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                            ;
++------------------------+----------------+-----------------------------------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                                                         ;
+; LPM_WIDTHD             ; 2              ; Untyped                                                         ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                         ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                         ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                         ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                         ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                         ;
+; CBXI_PARAMETER         ; lpm_divide_62m ; Untyped                                                         ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                         ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                         ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                      ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                    ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                    ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                  ;
++------------------------+----------------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +----------------------------------------------------------------------------------------------------+
 ; altsyncram Parameter Settings by Entity Instance                                                   ;
 +-------------------------------------------+--------------------------------------------------------+
@@ -431,25 +496,51 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+--------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "s_memory_init:s_mem_init_inst"                                                        ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; Port   ; Type   ; Severity ; Details                                                                             ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; start  ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; reset  ; Input  ; Info     ; Stuck at GND                                                                        ;
-; finish ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "decoder_core_control:decoder_core_inst"                                                      ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; start         ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; finish        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; failed        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; shuffle_start ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; decore_start  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "s_memory:s_memory_inst"                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; wren ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "shared_s_access:shared_access_inst"                                                     ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; decode_q ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------+
+; Port Connectivity Checks: "shuffle_memory_with_key:shuffle_mem_inst" ;
++--------------------+-------+----------+------------------------------+
+; Port               ; Type  ; Severity ; Details                      ;
++--------------------+-------+----------+------------------------------+
+; secret_key[23..10] ; Input ; Info     ; Stuck at GND                 ;
+; secret_key[8..7]   ; Input ; Info     ; Stuck at GND                 ;
+; secret_key[5..4]   ; Input ; Info     ; Stuck at GND                 ;
+; secret_key[2..1]   ; Input ; Info     ; Stuck at GND                 ;
+; secret_key[9]      ; Input ; Info     ; Stuck at VCC                 ;
+; secret_key[6]      ; Input ; Info     ; Stuck at VCC                 ;
+; secret_key[3]      ; Input ; Info     ; Stuck at VCC                 ;
+; secret_key[0]      ; Input ; Info     ; Stuck at VCC                 ;
++--------------------+-------+----------+------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "s_memory_init:s_mem_init_inst" ;
++-------+-------+----------+--------------------------------+
+; Port  ; Type  ; Severity ; Details                        ;
++-------+-------+----------+--------------------------------+
+; reset ; Input ; Info     ; Stuck at GND                   ;
++-------+-------+----------+--------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------+
@@ -475,30 +566,37 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 47                          ;
+; arriav_ff             ; 110                         ;
 ;     CLR               ; 5                           ;
-;     ENA               ; 9                           ;
+;     ENA               ; 25                          ;
 ;     ENA CLR           ; 7                           ;
 ;     ENA CLR SLD       ; 8                           ;
-;     ENA SLD           ; 8                           ;
-;     plain             ; 10                          ;
-; arriav_lcell_comb     ; 61                          ;
-;     arith             ; 16                          ;
-;         1 data inputs ; 16                          ;
+;     ENA SCLR          ; 24                          ;
+;     ENA SLD           ; 24                          ;
+;     plain             ; 17                          ;
+; arriav_lcell_comb     ; 163                         ;
+;     arith             ; 51                          ;
+;         0 data inputs ; 7                           ;
+;         1 data inputs ; 32                          ;
+;         3 data inputs ; 7                           ;
+;         4 data inputs ; 5                           ;
 ;     extend            ; 1                           ;
 ;         7 data inputs ; 1                           ;
-;     normal            ; 44                          ;
+;     normal            ; 103                         ;
 ;         0 data inputs ; 1                           ;
-;         2 data inputs ; 2                           ;
+;         2 data inputs ; 14                          ;
+;         3 data inputs ; 14                          ;
+;         4 data inputs ; 32                          ;
+;         5 data inputs ; 23                          ;
+;         6 data inputs ; 19                          ;
+;     shared            ; 8                           ;
+;         2 data inputs ; 4                           ;
 ;         3 data inputs ; 4                           ;
-;         4 data inputs ; 18                          ;
-;         5 data inputs ; 11                          ;
-;         6 data inputs ; 8                           ;
 ; boundary_port         ; 94                          ;
 ; stratixv_ram_block    ; 8                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.70                        ;
-; Average LUT depth     ; 1.46                        ;
+; Max LUT depth         ; 9.40                        ;
+; Average LUT depth     ; 2.60                        ;
 +-----------------------+-----------------------------+
 
 
@@ -517,25 +615,27 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.2 Build 203 01/18/2017 SJ Lite Edition
-    Info: Processing started: Wed Jun 12 17:41:21 2024
+    Info: Processing started: Thu Jun 13 15:04:30 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off rc4 -c rc4
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file shuffle_memory_with_key.sv
+    Info (12023): Found entity 1: shuffle_memory_with_key File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/shuffle_memory_with_key.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file our code/s_memory_init.sv
     Info (12023): Found entity 1: s_memory_init File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/Our Code/s_memory_init.sv Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file shared_s_access.sv
     Info (12023): Found entity 1: shared_s_access File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/shared_s_access.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file sevensegmentdisplaydecoder.v
     Info (12023): Found entity 1: SevenSegmentDisplayDecoder File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/SevenSegmentDisplayDecoder.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file shuffle_momory_with_key.sv
-    Info (12023): Found entity 1: shuffle_memory_with_key File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/shuffle_momory_with_key.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file ksa.sv
     Info (12023): Found entity 1: ksa File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/ksa.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file s_memory.v
     Info (12023): Found entity 1: s_memory File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/s_memory.v Line: 40
-Warning (10236): Verilog HDL Implicit Net warning at ksa.sv(47): created implicit net for "init_finish" File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/ksa.sv Line: 47
+Info (12021): Found 1 design units, including 1 entities, in source file decoder_core_control.sv
+    Info (12023): Found entity 1: decoder_core_control File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/decoder_core_control.sv Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at decoder_core_control.sv(40): created implicit net for "decode_start" File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/decoder_core_control.sv Line: 40
 Info (12127): Elaborating entity "ksa" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at ksa.sv(20): object "reset_n" assigned a value but never read File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/ksa.sv Line: 20
+Warning (10036): Verilog HDL or VHDL warning at ksa.sv(21): object "reset_n" assigned a value but never read File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/ksa.sv Line: 21
 Warning (10034): Output port "LEDR" at ksa.sv(6) has no driver File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/ksa.sv Line: 6
 Warning (10034): Output port "HEX0" at ksa.sv(7) has no driver File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/ksa.sv Line: 7
 Warning (10034): Output port "HEX1" at ksa.sv(8) has no driver File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/ksa.sv Line: 8
@@ -543,8 +643,8 @@ Warning (10034): Output port "HEX2" at ksa.sv(9) has no driver File: C:/Users/Ry
 Warning (10034): Output port "HEX3" at ksa.sv(10) has no driver File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/ksa.sv Line: 10
 Warning (10034): Output port "HEX4" at ksa.sv(11) has no driver File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/ksa.sv Line: 11
 Warning (10034): Output port "HEX5" at ksa.sv(14) has no driver File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/ksa.sv Line: 14
-Info (12128): Elaborating entity "SevenSegmentDisplayDecoder" for hierarchy "SevenSegmentDisplayDecoder:sseg" File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/ksa.sv Line: 28
-Info (12128): Elaborating entity "s_memory" for hierarchy "s_memory:s_memory_inst" File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/ksa.sv Line: 40
+Info (12128): Elaborating entity "SevenSegmentDisplayDecoder" for hierarchy "SevenSegmentDisplayDecoder:sseg" File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/ksa.sv Line: 29
+Info (12128): Elaborating entity "s_memory" for hierarchy "s_memory:s_memory_inst" File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/ksa.sv Line: 41
 Info (12128): Elaborating entity "altsyncram" for hierarchy "s_memory:s_memory_inst|altsyncram:altsyncram_component" File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/s_memory.v Line: 86
 Info (12130): Elaborated megafunction instantiation "s_memory:s_memory_inst|altsyncram:altsyncram_component" File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/s_memory.v Line: 86
 Info (12133): Instantiated megafunction "s_memory:s_memory_inst|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/s_memory.v Line: 86
@@ -583,10 +683,14 @@ Info (12133): Instantiated megafunction "s_memory:s_memory_inst|altsyncram:altsy
 Info (12128): Elaborating entity "sld_jtag_endpoint_adapter" for hierarchy "s_memory:s_memory_inst|altsyncram:altsyncram_component|altsyncram_pvp1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_jtag_endpoint_adapter:jtag_signal_adapter" File: g:/intelfpga_lite/16.1/quartus/libraries/megafunctions/sld_mod_ram_rom.vhd Line: 302
 Info (12128): Elaborating entity "sld_jtag_endpoint_adapter_impl" for hierarchy "s_memory:s_memory_inst|altsyncram:altsyncram_component|altsyncram_pvp1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_jtag_endpoint_adapter:jtag_signal_adapter|sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst" File: g:/intelfpga_lite/16.1/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter.vhd Line: 232
 Info (12128): Elaborating entity "sld_rom_sr" for hierarchy "s_memory:s_memory_inst|altsyncram:altsyncram_component|altsyncram_pvp1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr" File: g:/intelfpga_lite/16.1/quartus/libraries/megafunctions/sld_mod_ram_rom.vhd Line: 828
-Info (12128): Elaborating entity "s_memory_init" for hierarchy "s_memory_init:s_mem_init_inst" File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/ksa.sv Line: 49
-Info (10264): Verilog HDL Case Statement information at s_memory_init.sv(32): all case item expressions in this case statement are onehot File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/Our Code/s_memory_init.sv Line: 32
+Info (12128): Elaborating entity "s_memory_init" for hierarchy "s_memory_init:s_mem_init_inst" File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/ksa.sv Line: 54
+Info (12128): Elaborating entity "shuffle_memory_with_key" for hierarchy "shuffle_memory_with_key:shuffle_mem_inst" File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/ksa.sv Line: 73
+Info (12128): Elaborating entity "shared_s_access" for hierarchy "shared_s_access:shared_access_inst" File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/ksa.sv Line: 97
+Info (12128): Elaborating entity "decoder_core_control" for hierarchy "decoder_core_control:decoder_core_inst" File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/ksa.sv Line: 120
+Warning (10036): Verilog HDL or VHDL warning at decoder_core_control.sv(40): object "decode_start" assigned a value but never read File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/decoder_core_control.sv Line: 40
+Warning (10034): Output port "decore_start" at decoder_core_control.sv(18) has no driver File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/decoder_core_control.sv Line: 18
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2024.06.12.17:41:29 Progress: Loading sld73f98f60/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2024.06.13.15:04:38 Progress: Loading sld73f98f60/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -609,6 +713,20 @@ Info (12021): Found 2 design units, including 1 entities, in source file db/ip/s
     Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_sldfabric File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/db/ip/sld73f98f60/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 11
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld73f98f60/submodules/alt_sld_fab_alt_sld_fab_splitter.sv
     Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_splitter File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/db/ip/sld73f98f60/submodules/alt_sld_fab_alt_sld_fab_splitter.sv Line: 3
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "shuffle_memory_with_key:shuffle_mem_inst|Mod0" File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/shuffle_memory_with_key.sv Line: 51
+Info (12130): Elaborated megafunction instantiation "shuffle_memory_with_key:shuffle_mem_inst|lpm_divide:Mod0" File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/shuffle_memory_with_key.sv Line: 51
+Info (12133): Instantiated megafunction "shuffle_memory_with_key:shuffle_mem_inst|lpm_divide:Mod0" with the following parameter: File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/shuffle_memory_with_key.sv Line: 51
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "2"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_62m.tdf
+    Info (12023): Found entity 1: lpm_divide_62m File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/db/lpm_divide_62m.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_9kh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_9kh File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/db/sign_div_unsign_9kh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_ose.tdf
+    Info (12023): Found entity 1: alt_u_div_ose File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/db/alt_u_div_ose.tdf Line: 23
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/ksa.sv Line: 6
     Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/ksa.sv Line: 6
@@ -681,16 +799,16 @@ Warning (21074): Design contains 14 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/ksa.sv Line: 5
     Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/ksa.sv Line: 5
     Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/ksa.sv Line: 5
-Info (21057): Implemented 283 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 419 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 18 input pins
     Info (21059): Implemented 53 output pins
-    Info (21061): Implemented 203 logic cells
+    Info (21061): Implemented 339 logic cells
     Info (21064): Implemented 8 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 78 warnings
-    Info: Peak virtual memory: 4906 megabytes
-    Info: Processing ended: Wed Jun 12 17:41:35 2024
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 80 warnings
+    Info: Peak virtual memory: 4908 megabytes
+    Info: Processing ended: Thu Jun 13 15:04:44 2024
     Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:11
+    Info: Total CPU time (on all processors): 00:00:10
 
 
 +------------------------------------------+

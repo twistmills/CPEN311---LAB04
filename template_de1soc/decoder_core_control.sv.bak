@@ -1,0 +1,32 @@
+module decoder_core_control(
+	input clk,
+	input [23:0] secret_key,
+	output [23:0] shuffle_secret_key,
+	
+	output init_start,
+	input init_finish,
+	
+	output shuffle_start,
+	input shuffle_finish,
+	
+	output decore_start,
+	input decode_finish,
+	input decode_failed,
+	output [23:4] successful_secret_key
+	
+	);
+
+logic [8:0]state
+
+// states, add count to state once finalized
+localparam IDLE            = 0000_00000;
+localparam START_INIT      = 0001_00001;
+localparam WAIT_INIT       = 0010_00000;
+localparam START_SHUFFLE   = 0011_00010;
+localparam WAIT_SHUFFLE    = 0100_00000;
+localparam START_DECODE    = 0101_00100;
+localparam WAIT_DECODE     = 0110_00000;
+localparam DECODE_FAIL     = 0111_01000;
+localparam DECODE_FINISH   = 1000_10000;
+
+assign init_start <= 
