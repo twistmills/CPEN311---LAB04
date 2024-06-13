@@ -7,46 +7,46 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/twist/OneDrive/Documents/GitHub/CPEN311---LAB04/template_de1soc/simulation/qsim
-vs_memory_init_tb
-Z1 !s110 1718229908
+Z0 dC:/Users/Ryan/Documents/GitHub/CPEN311---LAB04/template_de1soc/simulation/qsim
+vshared_s_access
+Z1 !s110 1718232497
 !i10b 1
-!s100 iSNhhoT]16mYZg@4FaCoi1
-IRHA`a939[c:ch<8?>liB?3
+!s100 h_OMbZS`D^Cl@e4R_Dhm^1
+I3iQZ290JW^<SlI;1P90J62
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1718229907
+Z3 w1718232496
 8rc4.vo
 Frc4.vo
 L0 32
-Z3 OV;L;10.5b;63
+Z4 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1718229908.000000
+Z5 !s108 1718232497.000000
 !s107 rc4.vo|
 !s90 -work|work|rc4.vo|
 !i113 1
-Z5 o-work work
-Z6 tCvgOpt 0
-vs_memory_init_tb_vlg_vec_tst
+Z6 o-work work
+Z7 tCvgOpt 0
+vshared_s_access_vlg_vec_tst
 R1
 !i10b 1
-!s100 Vl??[30Q=N0emhQ<8?T]Z2
-IYb`IZYce5;T=Di=mXEPkS0
+!s100 0gS3VLgbe1EGnnAFMaPkk2
+IV9NlTGKLZ7GFJ:H=P5@W31
 R2
 R0
-w1718229906
-8Waveform.vwf.vt
-FWaveform.vwf.vt
-L0 30
 R3
+8shared_access_simulation.vwf.vt
+Fshared_access_simulation.vwf.vt
+L0 30
+R4
 r1
 !s85 0
 31
-R4
-!s107 Waveform.vwf.vt|
-!s90 -work|work|Waveform.vwf.vt|
-!i113 1
 R5
+!s107 shared_access_simulation.vwf.vt|
+!s90 -work|work|shared_access_simulation.vwf.vt|
+!i113 1
 R6
+R7
