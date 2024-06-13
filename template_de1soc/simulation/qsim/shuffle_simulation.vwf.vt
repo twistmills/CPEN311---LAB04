@@ -19,7 +19,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "06/13/2024 14:19:41"
+// Generated on "06/13/2024 15:34:22"
                                                                                 
 // Verilog Test Bench (with test vectors) for design :                          shuffle_memory_with_key
 // 
@@ -36,6 +36,7 @@ reg [7:0] shuffle_q;
 reg start;
 // wires                                               
 wire finish;
+wire [7:0] secret_key_byte_debug;
 wire [7:0] shuffle_address;
 wire [7:0] shuffle_data;
 wire shuffle_wren;
@@ -46,6 +47,7 @@ shuffle_memory_with_key i1 (
 	.clk(clk),
 	.finish(finish),
 	.secret_key(secret_key),
+	.secret_key_byte_debug(secret_key_byte_debug),
 	.shuffle_address(shuffle_address),
 	.shuffle_data(shuffle_data),
 	.shuffle_q(shuffle_q),
