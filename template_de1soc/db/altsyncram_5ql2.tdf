@@ -1,4 +1,4 @@
---altsyncram ACF_BLOCK_RAM_AND_MLAB_EQUIVALENT_PAUSED_READ_CAPABILITIES="CARE" ADDRESS_ACLR_B="NONE" ADDRESS_REG_B="CLOCK1" CBX_DECLARE_ALL_CONNECTED_PORTS="OFF" CLOCK_ENABLE_INPUT_A="BYPASS" CLOCK_ENABLE_OUTPUT_A="BYPASS" CYCLONEII_M4K_COMPATIBILITY="ON" DEVICE_FAMILY="Cyclone V" ENABLE_RUNTIME_MOD="NO" INDATA_ACLR_B="NONE" INDATA_REG_B="CLOCK1" INIT_FILE="./secret_messages/msg_4_for_task3/message.mif" LOW_POWER_MODE="AUTO" NUMWORDS_A=256 NUMWORDS_B=256 OPERATION_MODE="BIDIR_DUAL_PORT" OUTDATA_ACLR_A="NONE" OUTDATA_ACLR_B="NONE" OUTDATA_REG_A="UNREGISTERED" OUTDATA_REG_B="UNREGISTERED" RAM_BLOCK_TYPE="M10K" RDCONTROL_REG_B="CLOCK1" read_during_write_mode_port_a="NEW_DATA_NO_NBE_READ" WIDTH_A=8 WIDTH_B=8 WIDTH_BYTEENA_A=1 WIDTHAD_A=8 WIDTHAD_B=8 WRCONTROL_ACLR_B="NONE" WRCONTROL_WRADDRESS_REG_B="CLOCK1" address_a address_b clock0 clock1 data_a data_b q_a q_b wren_a wren_b CARRY_CHAIN="MANUAL" CARRY_CHAIN_LENGTH=48
+--altsyncram ACF_BLOCK_RAM_AND_MLAB_EQUIVALENT_PAUSED_READ_CAPABILITIES="CARE" ADDRESS_ACLR_B="NONE" ADDRESS_REG_B="CLOCK1" CBX_DECLARE_ALL_CONNECTED_PORTS="OFF" CLOCK_ENABLE_INPUT_A="BYPASS" CLOCK_ENABLE_OUTPUT_A="BYPASS" CYCLONEII_M4K_COMPATIBILITY="ON" DEVICE_FAMILY="Cyclone V" ENABLE_RUNTIME_MOD="NO" INDATA_ACLR_B="NONE" INDATA_REG_B="CLOCK1" INIT_FILE="./secret_messages/msg_5_for_task3/message.mif" LOW_POWER_MODE="AUTO" NUMWORDS_A=256 NUMWORDS_B=256 OPERATION_MODE="BIDIR_DUAL_PORT" OUTDATA_ACLR_A="NONE" OUTDATA_ACLR_B="NONE" OUTDATA_REG_A="UNREGISTERED" OUTDATA_REG_B="UNREGISTERED" RAM_BLOCK_TYPE="M10K" RDCONTROL_REG_B="CLOCK1" read_during_write_mode_port_a="NEW_DATA_NO_NBE_READ" WIDTH_A=8 WIDTH_B=8 WIDTH_BYTEENA_A=1 WIDTHAD_A=8 WIDTHAD_B=8 WRCONTROL_ACLR_B="NONE" WRCONTROL_WRADDRESS_REG_B="CLOCK1" address_a address_b clock0 clock1 data_a data_b q_a q_b wren_a wren_b CARRY_CHAIN="MANUAL" CARRY_CHAIN_LENGTH=48
 --VERSION_BEGIN 16.1 cbx_altera_syncram_nd_impl 2017:01:18:18:20:37:SJ cbx_altsyncram 2017:01:18:18:20:37:SJ cbx_cycloneii 2017:01:18:18:20:37:SJ cbx_lpm_add_sub 2017:01:18:18:20:37:SJ cbx_lpm_compare 2017:01:18:18:20:37:SJ cbx_lpm_decode 2017:01:18:18:20:37:SJ cbx_lpm_mux 2017:01:18:18:20:37:SJ cbx_mgl 2017:01:18:18:27:06:SJ cbx_nadder 2017:01:18:18:20:37:SJ cbx_stratix 2017:01:18:18:20:37:SJ cbx_stratixii 2017:01:18:18:20:37:SJ cbx_stratixiii 2017:01:18:18:20:37:SJ cbx_stratixv 2017:01:18:18:20:37:SJ cbx_util_mgl 2017:01:18:18:20:37:SJ  VERSION_END
 
 
@@ -25,7 +25,7 @@ RETURNS ( dftout[8..0], eccstatus[WIDTH_ECCSTATUS-1..0], portadataout[PORT_A_DAT
 --synthesis_resources = M10K 1 
 OPTIONS ALTERA_INTERNAL_OPTION = "OPTIMIZE_POWER_DURING_SYNTHESIS=NORMAL_COMPILATION";
 
-SUBDESIGN altsyncram_4ql2
+SUBDESIGN altsyncram_5ql2
 ( 
 	address_a[7..0]	:	input;
 	address_b[7..0]	:	input;
@@ -46,7 +46,7 @@ VARIABLE
 			CLK1_CORE_CLOCK_ENABLE = "none",
 			CLK1_INPUT_CLOCK_ENABLE = "none",
 			CONNECTIVITY_CHECKING = "OFF",
-			INIT_FILE = "./secret_messages/msg_4_for_task3/message.mif",
+			INIT_FILE = "./secret_messages/msg_5_for_task3/message.mif",
 			INIT_FILE_LAYOUT = "port_a",
 			LOGICAL_RAM_NAME = "ALTSYNCRAM",
 			MIXED_PORT_FEED_THROUGH_MODE = "dont_care",
@@ -82,7 +82,7 @@ VARIABLE
 			CLK1_CORE_CLOCK_ENABLE = "none",
 			CLK1_INPUT_CLOCK_ENABLE = "none",
 			CONNECTIVITY_CHECKING = "OFF",
-			INIT_FILE = "./secret_messages/msg_4_for_task3/message.mif",
+			INIT_FILE = "./secret_messages/msg_5_for_task3/message.mif",
 			INIT_FILE_LAYOUT = "port_a",
 			LOGICAL_RAM_NAME = "ALTSYNCRAM",
 			MIXED_PORT_FEED_THROUGH_MODE = "dont_care",
@@ -118,7 +118,7 @@ VARIABLE
 			CLK1_CORE_CLOCK_ENABLE = "none",
 			CLK1_INPUT_CLOCK_ENABLE = "none",
 			CONNECTIVITY_CHECKING = "OFF",
-			INIT_FILE = "./secret_messages/msg_4_for_task3/message.mif",
+			INIT_FILE = "./secret_messages/msg_5_for_task3/message.mif",
 			INIT_FILE_LAYOUT = "port_a",
 			LOGICAL_RAM_NAME = "ALTSYNCRAM",
 			MIXED_PORT_FEED_THROUGH_MODE = "dont_care",
@@ -154,7 +154,7 @@ VARIABLE
 			CLK1_CORE_CLOCK_ENABLE = "none",
 			CLK1_INPUT_CLOCK_ENABLE = "none",
 			CONNECTIVITY_CHECKING = "OFF",
-			INIT_FILE = "./secret_messages/msg_4_for_task3/message.mif",
+			INIT_FILE = "./secret_messages/msg_5_for_task3/message.mif",
 			INIT_FILE_LAYOUT = "port_a",
 			LOGICAL_RAM_NAME = "ALTSYNCRAM",
 			MIXED_PORT_FEED_THROUGH_MODE = "dont_care",
@@ -190,7 +190,7 @@ VARIABLE
 			CLK1_CORE_CLOCK_ENABLE = "none",
 			CLK1_INPUT_CLOCK_ENABLE = "none",
 			CONNECTIVITY_CHECKING = "OFF",
-			INIT_FILE = "./secret_messages/msg_4_for_task3/message.mif",
+			INIT_FILE = "./secret_messages/msg_5_for_task3/message.mif",
 			INIT_FILE_LAYOUT = "port_a",
 			LOGICAL_RAM_NAME = "ALTSYNCRAM",
 			MIXED_PORT_FEED_THROUGH_MODE = "dont_care",
@@ -226,7 +226,7 @@ VARIABLE
 			CLK1_CORE_CLOCK_ENABLE = "none",
 			CLK1_INPUT_CLOCK_ENABLE = "none",
 			CONNECTIVITY_CHECKING = "OFF",
-			INIT_FILE = "./secret_messages/msg_4_for_task3/message.mif",
+			INIT_FILE = "./secret_messages/msg_5_for_task3/message.mif",
 			INIT_FILE_LAYOUT = "port_a",
 			LOGICAL_RAM_NAME = "ALTSYNCRAM",
 			MIXED_PORT_FEED_THROUGH_MODE = "dont_care",
@@ -262,7 +262,7 @@ VARIABLE
 			CLK1_CORE_CLOCK_ENABLE = "none",
 			CLK1_INPUT_CLOCK_ENABLE = "none",
 			CONNECTIVITY_CHECKING = "OFF",
-			INIT_FILE = "./secret_messages/msg_4_for_task3/message.mif",
+			INIT_FILE = "./secret_messages/msg_5_for_task3/message.mif",
 			INIT_FILE_LAYOUT = "port_a",
 			LOGICAL_RAM_NAME = "ALTSYNCRAM",
 			MIXED_PORT_FEED_THROUGH_MODE = "dont_care",
@@ -298,7 +298,7 @@ VARIABLE
 			CLK1_CORE_CLOCK_ENABLE = "none",
 			CLK1_INPUT_CLOCK_ENABLE = "none",
 			CONNECTIVITY_CHECKING = "OFF",
-			INIT_FILE = "./secret_messages/msg_4_for_task3/message.mif",
+			INIT_FILE = "./secret_messages/msg_5_for_task3/message.mif",
 			INIT_FILE_LAYOUT = "port_a",
 			LOGICAL_RAM_NAME = "ALTSYNCRAM",
 			MIXED_PORT_FEED_THROUGH_MODE = "dont_care",

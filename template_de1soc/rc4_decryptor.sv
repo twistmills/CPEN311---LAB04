@@ -3,7 +3,6 @@ module rc4_decryptor(
 	input start,
 	output finish,
 	output fail,
-	
 	input [23:0] secret_key
 
 
@@ -145,11 +144,9 @@ decoder_core_control decoder_core_inst(
 	.shuffle_finish(shuffle_finish),
 	.decode_start(decode_start),
 	.decode_finish(decode_finish),
-	.decode_failed(decode_fail)
+	.decode_failed(decode_fail),
 	//output [23:4] successful_secret_key   // Might need to pass back the secret key unless we keep track globally 
-	
 	);
-
 
 
 endmodule

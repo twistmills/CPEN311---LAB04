@@ -30,38 +30,69 @@ SevenSegmentDisplayDecoder sseg3(.ssOut(HEX3), .nIn(secret_key[15:12]));
 SevenSegmentDisplayDecoder sseg4(.ssOut(HEX4), .nIn(secret_key[19:16]));
 SevenSegmentDisplayDecoder sseg5(.ssOut(HEX5), .nIn(secret_key[23:20]));
 
-logic fail_crack;
-logic finish_crack;
+logic fail_crack_00, fail_crack_01, fail_crack_02, fail_crack_03;
+logic finish_crack_00, finish_crack_01, finish_crack_02, finish_crack_03;
 logic start_crack = 1'b1;
 
 
-rc4_decryptor rc4_crack_int(
+rc4_decryptor CORE00(
 	.clk(clk),
 	.start(start_crack),
-	.finish(finish_crack),
-	.fail(fail_crack),
-	.secret_key(secret_key));
+	.finish(finish_crack_00),
+	.fail(fail_crack_00),
+	.secret_key(secret_key),
+	);
+
+rc4_decryptor_01 CORE01(
+	.clk(clk),
+	.start(start_crack),
+	.finish(finish_crack_01),
+	.fail(fail_crack_01),
+	.secret_key((secret_key+24'd1)),
+	);
+	
+rc4_decryptor_02 CORE02(
+	.clk(clk),
+	.start(start_crack),
+	.finish(finish_crack_02),
+	.fail(fail_crack_02),
+	.secret_key((secret_key+24'd2)),
+	);
+	
+rc4_decryptor_03 CORE03(
+	.clk(clk),
+	.start(start_crack),
+	.finish(finish_crack_03),
+	.fail(fail_crack_03),
+	.secret_key((secret_key+24'd3)),
+	);
+
+
+	
+logic keep_going;
+
 	
 initial begin 
 	secret_key <= 24'h000000;
 	state <= IDLE;
 end
 
-logic [5:0] state;
+logic [6:0] state;
 
 parameter max_key = 24'h3FFFFF;
 
-localparam IDLE          = 6'b000_000;
-localparam START_CRACK   = 6'b001_001;
-localparam WAIT_CRACK    = 6'b010_000;
-localparam INCREMENT_KEY = 6'b011_000;
-localparam FINISH        = 6'b100_010;
-localparam NO_KEY_FOUND  = 6'b101_100;
+localparam IDLE          = 7'b000_0000;
+localparam START_CRACK   = 7'b001_0001;
+localparam WAIT_CRACK    = 7'b010_1000;
+localparam INCREMENT_KEY = 7'b011_0000;
+localparam FINISH        = 7'b100_0010;
+localparam NO_KEY_FOUND  = 7'b101_0100;
 
 assign start_crack = state[0];
 assign LEDR[0] = state[1]; // found key
 assign LEDR[9] = state[2]; // no key found
 
+logic fail_flag_00,fail_flag_01,fail_flag_02,fail_flag_03; 
 
 always_ff @ (posedge clk) begin
 	
@@ -75,14 +106,45 @@ always_ff @ (posedge clk) begin
 		START_CRACK: state <= WAIT_CRACK;
 		
 		WAIT_CRACK: begin
-			if (finish_crack) state <= FINISH;
-			else if (fail_crack) state <= INCREMENT_KEY;
+
+			if (finish_crack_00) begin
+				state <= FINISH;
+				secret_key <= secret_key + 24'd0;
+			end
+			
+			if (finish_crack_01) begin
+				state <= FINISH;
+				secret_key <= secret_key + 24'd1;
+			end
+			if (finish_crack_02) begin
+				state <= FINISH;
+				secret_key <= secret_key + 24'd2;
+			end
+		   if (finish_crack_03) begin
+				state <= FINISH;
+				secret_key <= secret_key + 24'd3;
+			end
+			
+			
+			if(fail_crack_00) fail_flag_00 <= 1'b1;
+			if(fail_crack_01) fail_flag_01 <= 1'b1;
+			if(fail_crack_02) fail_flag_02 <= 1'b1;
+		   if(fail_crack_03) fail_flag_03 <= 1'b1;
+			
+			else if (fail_flag_00 && fail_flag_01 && fail_flag_02 && fail_flag_03) begin
+				state <= INCREMENT_KEY;
+				fail_flag_00 <= 1'b0;
+				fail_flag_01 <= 1'b0;
+				fail_flag_02 <= 1'b0;
+				fail_flag_03 <= 1'b0;
+			end
+			
 			else state <= WAIT_CRACK;
 		
 		end
 		INCREMENT_KEY: begin
 			if (secret_key < max_key) begin
-				secret_key <= secret_key + 24'h001;
+				secret_key <= secret_key + 24'd4;
 				state <= START_CRACK;
 			end
 			else state <= NO_KEY_FOUND;
@@ -99,7 +161,7 @@ always_ff @ (posedge clk) begin
 end
 
 
-
+endmodule
 
 
 
@@ -262,5 +324,5 @@ end
 //	);
 
 
-endmodule
+
 

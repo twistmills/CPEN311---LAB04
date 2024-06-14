@@ -71,7 +71,9 @@ always_ff @ (posedge clk)
 		
 		end
 		
-		DECODE_FAIL: state <= IDLE;
+		DECODE_FAIL: 
+		
+			state <= IDLE;
 		
 		DECODE_FINISH: state <= IDLE;
 		
