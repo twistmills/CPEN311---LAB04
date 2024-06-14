@@ -1,5 +1,5 @@
 Flow report for rc4
-Thu Jun 13 16:06:20 2024
+Thu Jun 13 20:10:56 2024
 Quartus Prime Version 16.1.2 Build 203 01/18/2017 SJ Lite Edition
 
 
@@ -41,18 +41,18 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Thu Jun 13 16:06:20 2024       ;
+; Flow Status                     ; Successful - Thu Jun 13 20:10:56 2024       ;
 ; Quartus Prime Version           ; 16.1.2 Build 203 01/18/2017 SJ Lite Edition ;
 ; Revision Name                   ; rc4                                         ;
 ; Top-level Entity Name           ; ksa                                         ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 176 / 32,070 ( < 1 % )                      ;
-; Total registers                 ; 219                                         ;
+; Logic utilization (in ALMs)     ; 358 / 32,070 ( 1 % )                        ;
+; Total registers                 ; 453                                         ;
 ; Total pins                      ; 67 / 457 ( 15 % )                           ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 2,048 / 4,065,280 ( < 1 % )                 ;
+; Total block memory bits         ; 6,144 / 4,065,280 ( < 1 % )                 ;
 ; Total DSP Blocks                ; 0 / 87 ( 0 % )                              ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
@@ -68,7 +68,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/13/2024 16:05:21 ;
+; Start date & time ; 06/13/2024 20:09:31 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; rc4                 ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 27214213953951.171831992011972         ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 27214213953951.171833457120544         ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation ;
@@ -87,6 +87,11 @@ agreement for further details.
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --             ;
 ; MISC_FILE                           ; s_memory_inst.v                        ; --            ; --          ; --             ;
 ; MISC_FILE                           ; s_memory.cmp                           ; --            ; --          ; --             ;
+; MISC_FILE                           ; decrypted_memory_inst.v                ; --            ; --          ; --             ;
+; MISC_FILE                           ; decrypted_memory.cmp                   ; --            ; --          ; --             ;
+; MISC_FILE                           ; encrypted_memory_inst.v                ; --            ; --          ; --             ;
+; MISC_FILE                           ; encrypted_memory_bb.v                  ; --            ; --          ; --             ;
+; MISC_FILE                           ; encrypted_memory.cmp                   ; --            ; --          ; --             ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; ksa         ; Top            ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; ksa         ; Top            ;
 ; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; ksa         ; Top            ;
@@ -101,12 +106,12 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:14     ; 1.0                     ; 4902 MB             ; 00:00:10                           ;
-; Fitter                    ; 00:00:33     ; 1.0                     ; 7033 MB             ; 00:00:34                           ;
-; Assembler                 ; 00:00:05     ; 1.0                     ; 4834 MB             ; 00:00:04                           ;
-; TimeQuest Timing Analyzer ; 00:00:04     ; 1.2                     ; 5223 MB             ; 00:00:03                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4747 MB             ; 00:00:01                           ;
-; Total                     ; 00:00:57     ; --                      ; --                  ; 00:00:52                           ;
+; Analysis & Synthesis      ; 00:00:21     ; 1.0                     ; 4915 MB             ; 00:00:11                           ;
+; Fitter                    ; 00:00:48     ; 1.1                     ; 7089 MB             ; 00:00:38                           ;
+; Assembler                 ; 00:00:05     ; 1.0                     ; 4835 MB             ; 00:00:03                           ;
+; TimeQuest Timing Analyzer ; 00:00:05     ; 1.4                     ; 5230 MB             ; 00:00:04                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4757 MB             ; 00:00:01                           ;
+; Total                     ; 00:01:20     ; --                      ; --                  ; 00:00:57                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
