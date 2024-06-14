@@ -87,7 +87,7 @@ module encrypted_memory (
 	defparam
 		altsyncram_component.clock_enable_input_a = "BYPASS",
 		altsyncram_component.clock_enable_output_a = "BYPASS",
-		altsyncram_component.init_file = "./secret_messages/msg_5_for_task3/message.mif",
+		altsyncram_component.init_file = "./secret_messages/msg_4_for_task3/message.mif",
 		altsyncram_component.intended_device_family = "Cyclone V",
 		altsyncram_component.lpm_hint = "ENABLE_RUNTIME_MOD=YES,INSTANCE_NAME=E",
 		altsyncram_component.lpm_type = "altsyncram",
