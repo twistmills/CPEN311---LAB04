@@ -49,7 +49,7 @@ end
 
 logic [5:0] state;
 
-parameter max_key = 24'h00FFFF;
+parameter max_key = 24'h3FFFFF;
 
 localparam IDLE          = 6'b000_000;
 localparam START_CRACK   = 6'b001_001;
