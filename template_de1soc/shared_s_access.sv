@@ -26,8 +26,8 @@ output [(M-1):0] shuffle_q,
 
 // Interaction with the decode module
 input [(M-1):0] decode_address,
-//input [(M-1):0] decode_data;
-//input decode_wren;
+input [(M-1):0] decode_data,
+input decode_wren,
 output [(M-1):0] decode_q // May not need
 
 );
@@ -61,16 +61,16 @@ begin
 			
 		end
 		DECODE: begin
-			s_data    = 8'b0;
+			s_data    = decode_data;
 			s_address = decode_address;
-			s_wren    = 1'b0;
+			s_wren    = decode_wren;
 			
 			
 		end
 		default: begin
 			s_data    = 8'b0;
 			s_address = 8'b0;
-			s_wren    = 1'b1;
+			s_wren    = 1'b0;
 		end
 	endcase
 end

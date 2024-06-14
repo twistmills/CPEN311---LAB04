@@ -40,6 +40,27 @@ s_memory s_memory_inst(
 	.wren(s_wren),
 	.q(s_q));
 
+	
+logic [7:0] d_address;
+logic [7:0] d_data;
+	
+decrypted_memory d_memory_inst(
+	.clock(clk),
+	.address(d_address),
+	.data(d_data),
+	.wren(1'b1),
+	.q());
+	
+logic [7:0] e_address;
+logic [7:0] e_q;
+	
+encrypted_memory e_memory_inst(
+	.clock(clk),
+	.address(e_address),
+	.data(),
+	.wren(1'b0),
+	.q(e_q));
+
 logic init_start;
 logic init_finish;
 logic [7:0] init_address;
@@ -76,8 +97,31 @@ shuffle_memory_with_key shuffle_mem_inst(
 logic decode_start;
 logic decode_finish;
 logic decode_fail;
+logic fail_sensitive;
+logic [7:0] decode_data;
 logic [7:0] decode_address;
 logic [7:0] decode_q;
+logic decode_wren;
+
+decode decode_inst(
+	.clk(clk),
+	.start(decode_start),
+	.finish(decode_finish),
+	.fail(decode_fail),
+	.fail_sensitive(1'b0),
+	.decode_data(decode_data),
+	.decode_wren(decode_wren),
+	.decode_address(decode_address),
+	.decode_q(decode_q),
+	.encrypted_addr(e_address),
+	.encrypted_data(e_q),
+	.decrypted_addr(d_address),
+	.decrypted_data(d_data)
+);
+
+
+
+
 
 logic [1:0] s_source;
 
@@ -94,7 +138,9 @@ shared_s_access shared_access_inst(
 	.shuffle_wren(shuffle_wren),
 	.shuffle_q(shuffle_q),
 	.decode_address(decode_address),
-	.decode_q(decode_q));
+	.decode_q(decode_q),
+	.decode_wren(decode_wren),
+	.decode_data(decode_data));
 
 logic core_start;
 logic core_finish;
@@ -105,14 +151,14 @@ decoder_core_control decoder_core_inst(
 	//.secret_key(secret_key),
 	//.shuffle_secret_key(shuffle_secret_key),
 	.s_source(s_source),
-	.start(1'b1),
+	.start(~KEY[0]),
 	.finish(core_finish),
 	.failed(core_fail),
 	.init_start(init_start),
 	.init_finish(init_finish),
 	.shuffle_start(shuffle_start),
 	.shuffle_finish(shuffle_finish),
-	.decore_start(decode_start),
+	.decode_start(decode_start),
 	.decode_finish(decode_finish),
 	.decode_failed(decode_fail)
 	//output [23:4] successful_secret_key   // Might need to pass back the secret key unless we keep track globally 
