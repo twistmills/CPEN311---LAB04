@@ -15,7 +15,7 @@ module decoder_core_control(
 	output shuffle_start,
 	input shuffle_finish,
 	
-	output decore_start,
+	output decode_start,
 	input decode_finish,
 	input decode_failed
 	//output [23:4] successful_secret_key   // Might need to pass back the secret key unless we keep track globally 
