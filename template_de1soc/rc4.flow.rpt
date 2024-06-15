@@ -1,5 +1,5 @@
 Flow report for rc4
-Fri Jun 14 10:33:28 2024
+Fri Jun 14 17:32:09 2024
 Quartus Prime Version 16.1.2 Build 203 01/18/2017 SJ Lite Edition
 
 
@@ -41,18 +41,18 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Fri Jun 14 10:33:28 2024       ;
+; Flow Status                     ; Successful - Fri Jun 14 17:32:09 2024       ;
 ; Quartus Prime Version           ; 16.1.2 Build 203 01/18/2017 SJ Lite Edition ;
 ; Revision Name                   ; rc4                                         ;
-; Top-level Entity Name           ; ksa                                         ;
+; Top-level Entity Name           ; decoder_core_control                        ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 1,377 / 32,070 ( 4 % )                      ;
-; Total registers                 ; 1625                                        ;
-; Total pins                      ; 67 / 457 ( 15 % )                           ;
+; Logic utilization (in ALMs)     ; 15 / 32,070 ( < 1 % )                       ;
+; Total registers                 ; 10                                          ;
+; Total pins                      ; 13 / 457 ( 3 % )                            ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 24,576 / 4,065,280 ( < 1 % )                ;
+; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                       ;
 ; Total DSP Blocks                ; 0 / 87 ( 0 % )                              ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
@@ -68,46 +68,46 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/14/2024 10:31:03 ;
+; Start date & time ; 06/14/2024 17:25:35 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; rc4                 ;
 +-------------------+---------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                            ;
-+-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
-+-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 79846616326282.171838626227680         ; --            ; --          ; --             ;
-; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --          ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>        ; --          ; --             ;
-; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --             ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --             ;
-; MISC_FILE                           ; s_memory_inst.v                        ; --            ; --          ; --             ;
-; MISC_FILE                           ; s_memory.cmp                           ; --            ; --          ; --             ;
-; MISC_FILE                           ; decrypted_memory_inst.v                ; --            ; --          ; --             ;
-; MISC_FILE                           ; decrypted_memory.cmp                   ; --            ; --          ; --             ;
-; MISC_FILE                           ; encrypted_memory_inst.v                ; --            ; --          ; --             ;
-; MISC_FILE                           ; encrypted_memory_bb.v                  ; --            ; --          ; --             ;
-; MISC_FILE                           ; encrypted_memory.cmp                   ; --            ; --          ; --             ;
-; MISC_FILE                           ; s_memory_01_bb.v                       ; --            ; --          ; --             ;
-; MISC_FILE                           ; decrypted_memory_01_bb.v               ; --            ; --          ; --             ;
-; MISC_FILE                           ; encrypted_memory_01_bb.v               ; --            ; --          ; --             ;
-; MISC_FILE                           ; s_memory_02_bb.v                       ; --            ; --          ; --             ;
-; MISC_FILE                           ; decrypted_memory_02_bb.v               ; --            ; --          ; --             ;
-; MISC_FILE                           ; encrypted_memory_02_bb.v               ; --            ; --          ; --             ;
-; MISC_FILE                           ; s_memory_03_bb.v                       ; --            ; --          ; --             ;
-; MISC_FILE                           ; decrypted_memory_03_bb.v               ; --            ; --          ; --             ;
-; MISC_FILE                           ; encrypted_memory_03_bb.v               ; --            ; --          ; --             ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; ksa         ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; ksa         ; Top            ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; ksa         ; Top            ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --             ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --             ;
-; TOP_LEVEL_ENTITY                    ; ksa                                    ; rc4           ; --          ; --             ;
-+-------------------------------------+----------------------------------------+---------------+-------------+----------------+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                     ;
++-------------------------------------+----------------------------------------+---------------+----------------------+----------------+
+; Assignment Name                     ; Value                                  ; Default Value ; Entity Name          ; Section Id     ;
++-------------------------------------+----------------------------------------+---------------+----------------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 79846616326282.171841113529476         ; --            ; --                   ; --             ;
+; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --                   ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>        ; --                   ; --             ;
+; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --                   ; eda_simulation ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --                   ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --                   ; --             ;
+; MISC_FILE                           ; s_memory_inst.v                        ; --            ; --                   ; --             ;
+; MISC_FILE                           ; s_memory.cmp                           ; --            ; --                   ; --             ;
+; MISC_FILE                           ; decrypted_memory_inst.v                ; --            ; --                   ; --             ;
+; MISC_FILE                           ; decrypted_memory.cmp                   ; --            ; --                   ; --             ;
+; MISC_FILE                           ; encrypted_memory_inst.v                ; --            ; --                   ; --             ;
+; MISC_FILE                           ; encrypted_memory_bb.v                  ; --            ; --                   ; --             ;
+; MISC_FILE                           ; encrypted_memory.cmp                   ; --            ; --                   ; --             ;
+; MISC_FILE                           ; s_memory_01_bb.v                       ; --            ; --                   ; --             ;
+; MISC_FILE                           ; decrypted_memory_01_bb.v               ; --            ; --                   ; --             ;
+; MISC_FILE                           ; encrypted_memory_01_bb.v               ; --            ; --                   ; --             ;
+; MISC_FILE                           ; s_memory_02_bb.v                       ; --            ; --                   ; --             ;
+; MISC_FILE                           ; decrypted_memory_02_bb.v               ; --            ; --                   ; --             ;
+; MISC_FILE                           ; encrypted_memory_02_bb.v               ; --            ; --                   ; --             ;
+; MISC_FILE                           ; s_memory_03_bb.v                       ; --            ; --                   ; --             ;
+; MISC_FILE                           ; decrypted_memory_03_bb.v               ; --            ; --                   ; --             ;
+; MISC_FILE                           ; encrypted_memory_03_bb.v               ; --            ; --                   ; --             ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; decoder_core_control ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; decoder_core_control ; Top            ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; decoder_core_control ; Top            ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --                   ; --             ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --                   ; --             ;
+; TOP_LEVEL_ENTITY                    ; decoder_core_control                   ; rc4           ; --                   ; --             ;
++-------------------------------------+----------------------------------------+---------------+----------------------+----------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -115,12 +115,20 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:31     ; 1.0                     ; 4951 MB             ; 00:00:27                           ;
-; Fitter                    ; 00:01:18     ; 1.2                     ; 6919 MB             ; 00:01:25                           ;
-; Assembler                 ; 00:00:07     ; 1.0                     ; 4858 MB             ; 00:00:07                           ;
-; TimeQuest Timing Analyzer ; 00:00:19     ; 1.4                     ; 5239 MB             ; 00:00:20                           ;
-; EDA Netlist Writer        ; 00:00:03     ; 1.0                     ; 4791 MB             ; 00:00:02                           ;
-; Total                     ; 00:02:18     ; --                      ; --                  ; 00:02:21                           ;
+; Analysis & Synthesis      ; 00:00:09     ; 1.0                     ; 4851 MB             ; 00:00:08                           ;
+; Fitter                    ; 00:00:28     ; 1.0                     ; 6741 MB             ; 00:00:39                           ;
+; Assembler                 ; 00:00:06     ; 1.0                     ; 4826 MB             ; 00:00:05                           ;
+; TimeQuest Timing Analyzer ; 00:00:04     ; 1.0                     ; 5153 MB             ; 00:00:03                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4731 MB             ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4709 MB             ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4717 MB             ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4709 MB             ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4732 MB             ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4709 MB             ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4717 MB             ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4709 MB             ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4717 MB             ; 00:00:01                           ;
+; Total                     ; 00:00:56     ; --                      ; --                  ; 00:01:04                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -134,6 +142,14 @@ agreement for further details.
 ; Assembler                 ; LAPTOP-C675HTKB  ; Windows 10 ; 10.0       ; x86_64         ;
 ; TimeQuest Timing Analyzer ; LAPTOP-C675HTKB  ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer        ; LAPTOP-C675HTKB  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer        ; LAPTOP-C675HTKB  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer        ; LAPTOP-C675HTKB  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer        ; LAPTOP-C675HTKB  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer        ; LAPTOP-C675HTKB  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer        ; LAPTOP-C675HTKB  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer        ; LAPTOP-C675HTKB  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer        ; LAPTOP-C675HTKB  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer        ; LAPTOP-C675HTKB  ; Windows 10 ; 10.0       ; x86_64         ;
 +---------------------------+------------------+------------+------------+----------------+
 
 
@@ -145,6 +161,14 @@ quartus_fit --read_settings_files=off --write_settings_files=off rc4 -c rc4
 quartus_asm --read_settings_files=off --write_settings_files=off rc4 -c rc4
 quartus_sta rc4 -c rc4
 quartus_eda --read_settings_files=off --write_settings_files=off rc4 -c rc4
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off rc4 -c rc4 --vector_source=C:/Users/twist/OneDrive/Documents/GitHub/CPEN311---LAB04/template_de1soc/Waveform.vwf --testbench_file=C:/Users/twist/OneDrive/Documents/GitHub/CPEN311---LAB04/template_de1soc/simulation/qsim/Waveform.vwf.vt
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/twist/OneDrive/Documents/GitHub/CPEN311---LAB04/template_de1soc/simulation/qsim/ rc4 -c rc4
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off rc4 -c rc4 --vector_source=C:/Users/twist/OneDrive/Documents/GitHub/CPEN311---LAB04/template_de1soc/Waveform.vwf --testbench_file=C:/Users/twist/OneDrive/Documents/GitHub/CPEN311---LAB04/template_de1soc/simulation/qsim/Waveform.vwf.vt
+quartus_eda --write_settings_files=off --simulation=on --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory=C:/Users/twist/OneDrive/Documents/GitHub/CPEN311---LAB04/template_de1soc/simulation/qsim/ rc4 -c rc4
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off rc4 -c rc4 --vector_source=C:/Users/twist/OneDrive/Documents/GitHub/CPEN311---LAB04/template_de1soc/Waveform.vwf --testbench_file=C:/Users/twist/OneDrive/Documents/GitHub/CPEN311---LAB04/template_de1soc/simulation/qsim/Waveform.vwf.vt
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/twist/OneDrive/Documents/GitHub/CPEN311---LAB04/template_de1soc/simulation/qsim/ rc4 -c rc4
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off rc4 -c rc4 --vector_source=C:/Users/twist/OneDrive/Documents/GitHub/CPEN311---LAB04/template_de1soc/Waveform.vwf --testbench_file=C:/Users/twist/OneDrive/Documents/GitHub/CPEN311---LAB04/template_de1soc/simulation/qsim/Waveform.vwf.vt
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/twist/OneDrive/Documents/GitHub/CPEN311---LAB04/template_de1soc/simulation/qsim/ rc4 -c rc4
 
 
 

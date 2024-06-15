@@ -24,7 +24,7 @@ FUNCTION sld_mod_ram_rom (data_read[7..0])
 WITH ( CVALUE, IS_DATA_IN_RAM, IS_READABLE, NODE_NAME, NUMWORDS, SHIFT_COUNT_BITS, WIDTH_WORD, WIDTHAD)
 RETURNS ( address[7..0], data_write[7..0], enable_write, tck_usr);
 
---synthesis_resources = sld_mod_ram_rom 1 
+--synthesis_resources = M10K 1 sld_mod_ram_rom 1 
 SUBDESIGN altsyncram_r2q1
 ( 
 	address_a[7..0]	:	input;

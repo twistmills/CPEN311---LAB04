@@ -51,13 +51,13 @@ R8
 R11
 R12
 vdecoder_core_control
-Z14 !s110 1718314834
+Z14 !s110 1718411530
 !i10b 1
-!s100 W^?faA`c[:D<@72DRF1fe0
-Ic:ADARPnDDkn?;f``^2HM2
+!s100 a?VeFn^oBlAK1S<`4ee6k0
+IQHnJAO>9UTgX;iLT_1kKj1
 R2
-R0
-w1718314834
+Z15 dC:/Users/twist/OneDrive/Documents/GitHub/CPEN311---LAB04/template_de1soc/simulation/qsim
+w1718411529
 R4
 R5
 R6
@@ -65,7 +65,7 @@ R7
 r1
 !s85 0
 31
-Z15 !s108 1718314834.000000
+Z16 !s108 1718411530.000000
 R9
 R10
 !i113 1
@@ -74,21 +74,21 @@ R12
 vdecoder_core_control_vlg_vec_tst
 R14
 !i10b 1
-!s100 LW9SL59l@oz9ezMfkd^;L2
-IkzQnGJ70WdjFB_:4CK?LY3
+!s100 En4de1:2[6F7jY4S682Sh3
+IMi]Z0BhV_3W9aA_09k<Gc3
 R2
-R0
-w1718314833
-Z16 8decode_core_control_simulation.vwf.vt
-Z17 Fdecode_core_control_simulation.vwf.vt
+R15
+w1718411528
+Z17 8Waveform.vwf.vt
+Z18 FWaveform.vwf.vt
 R13
 R7
 r1
 !s85 0
 31
-R15
-Z18 !s107 decode_core_control_simulation.vwf.vt|
-Z19 !s90 -work|work|decode_core_control_simulation.vwf.vt|
+R16
+!s107 Waveform.vwf.vt|
+Z19 !s90 -work|work|Waveform.vwf.vt|
 !i113 1
 R11
 R12
@@ -121,21 +121,63 @@ I6oQd]^7F1P3kfGLIcQUY<2
 R2
 R0
 w1718314759
-R16
-R17
+8decode_core_control_simulation.vwf.vt
+Fdecode_core_control_simulation.vwf.vt
 R13
 R7
 r1
 !s85 0
 31
 R21
+!s107 decode_core_control_simulation.vwf.vt|
+!s90 -work|work|decode_core_control_simulation.vwf.vt|
+!i113 1
+R11
+R12
+vrc4_decryptor_02
+Z22 !s110 1718410974
+!i10b 1
+!s100 4Hho?=[R>]miZV=WZGio53
+IgSk`z22XE3H8]gHQnN]f62
+R2
+R15
+w1718410971
+R4
+R5
+R6
+R7
+r1
+!s85 0
+31
+!s108 1718410973.000000
+R9
+R10
+!i113 1
+R11
+R12
+vrc4_decryptor_02_vlg_vec_tst
+R22
+!i10b 1
+!s100 ]dI4H8P_^US73LbhXN7Za3
+ImI6OB33CWQP_hU28Y>e:b0
+R2
+R15
+w1718410969
+R17
 R18
+R13
+R7
+r1
+!s85 0
+31
+!s108 1718410974.000000
+!s107 Waveform.vwf.vt|
 R19
 !i113 1
 R11
 R12
 vs_memory_init
-Z22 !s110 1718308969
+Z23 !s110 1718308969
 !i10b 1
 !s100 ;b[Y4X>h7m4O1Fd4O`8j^2
 Ii:h]QHO`ZDc[P;5;UDNPX3
@@ -149,14 +191,14 @@ R7
 r1
 !s85 0
 31
-Z23 !s108 1718308969.000000
+Z24 !s108 1718308969.000000
 R9
 R10
 !i113 1
 R11
 R12
 vs_memory_init_vlg_vec_tst
-R22
+R23
 !i10b 1
 !s100 HO>ZFPoXnW1_nBIE_la930
 IE^G]GUWd9Ln@7EVm4L`QW1
@@ -170,20 +212,20 @@ R7
 r1
 !s85 0
 31
-R23
+R24
 !s107 memory_init_simulation.vwf.vt|
 !s90 -work|work|memory_init_simulation.vwf.vt|
 !i113 1
 R11
 R12
 vshared_s_access
-Z24 !s110 1718314970
+Z25 !s110 1718314970
 !i10b 1
 !s100 kH8BXh_9VofEG8HAF>1B`2
 IJBc3ke`cOVgnKfFIFXH1[2
 R2
 R0
-Z25 w1718314969
+Z26 w1718314969
 R4
 R5
 R6
@@ -191,20 +233,20 @@ R7
 r1
 !s85 0
 31
-Z26 !s108 1718314970.000000
+Z27 !s108 1718314970.000000
 R9
 R10
 !i113 1
 R11
 R12
 vshared_s_access_vlg_vec_tst
-R24
+R25
 !i10b 1
 !s100 dXVYgQU4aDF=JUYB^2REg1
 IaRI8=WM1UJ3P]zCXCF;6Z0
 R2
 R0
-R25
+R26
 8shared_access_simulation.vwf.vt
 Fshared_access_simulation.vwf.vt
 R13
@@ -212,20 +254,20 @@ R7
 r1
 !s85 0
 31
-R26
+R27
 !s107 shared_access_simulation.vwf.vt|
 !s90 -work|work|shared_access_simulation.vwf.vt|
 !i113 1
 R11
 R12
 vshuffle_memory_with_key
-Z27 !s110 1718318064
+Z28 !s110 1718318064
 !i10b 1
 !s100 05Ekn5Sje3N8Mafd>`1<z3
 IP5184f9M5`z2;z=;M@7>b0
 R2
 R0
-Z28 w1718318062
+Z29 w1718318062
 R4
 R5
 R6
@@ -233,20 +275,20 @@ R7
 r1
 !s85 0
 31
-Z29 !s108 1718318064.000000
+Z30 !s108 1718318064.000000
 R9
 R10
 !i113 1
 R11
 R12
 vshuffle_memory_with_key_vlg_vec_tst
-R27
+R28
 !i10b 1
 !s100 _ERWX]9i_hfK38fZK1LFB1
 I7Bn>cUzjQ<5dkZdN13RQb1
 R2
 R0
-R28
+R29
 8shuffle_simulation.vwf.vt
 Fshuffle_simulation.vwf.vt
 R13
@@ -254,7 +296,7 @@ R7
 r1
 !s85 0
 31
-R29
+R30
 !s107 shuffle_simulation.vwf.vt|
 !s90 -work|work|shuffle_simulation.vwf.vt|
 !i113 1

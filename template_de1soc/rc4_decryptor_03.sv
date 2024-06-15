@@ -3,7 +3,7 @@ module rc4_decryptor_03(
 	input start,
 	output finish,
 	output fail,
-	input [23:0] secret_key
+	input d
 
 
 );
