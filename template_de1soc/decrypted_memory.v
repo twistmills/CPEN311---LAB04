@@ -37,12 +37,25 @@
 // synopsys translate_off
 `timescale 1 ps / 1 ps
 // synopsys translate_on
-module decrypted_memory (
+module decrypted_memory 
+#(
+	parameter core_num = 1
+)
+
+(
 	address,
 	clock,
 	data,
 	wren,
 	q);
+	
+//	string instance_name = "";
+//	
+//	initial begin
+//		instance_name = $sformatf("ENABLE_RUNTIME_MOD=YES,INSTANCE_NAME=S_%0d", core_num);
+//	   //$sformat(instance_name, "ENABLE_RUNTIME_MOD=YES,INSTANCE_NAME=S_%0d", core_num);
+//		
+//	end
 
 	input	[7:0]  address;
 	input	  clock;
@@ -56,6 +69,7 @@ module decrypted_memory (
 `ifndef ALTERA_RESERVED_QIS
 // synopsys translate_on
 `endif
+
 
 	wire [7:0] sub_wire0;
 	wire [7:0] q = sub_wire0[7:0];
@@ -88,7 +102,8 @@ module decrypted_memory (
 		altsyncram_component.clock_enable_input_a = "BYPASS",
 		altsyncram_component.clock_enable_output_a = "BYPASS",
 		altsyncram_component.intended_device_family = "Cyclone V",
-		altsyncram_component.lpm_hint = "ENABLE_RUNTIME_MOD=YES,INSTANCE_NAME=D",
+		altsyncram_component.lpm_hint = {"ENABLE_RUNTIME_MOD=YES,INSTANCE_NAME=D_",((core_num / 10)+48),((core_num % 10)+48)},
+		//altsyncram_component.lpm_hint = instance_name,
 		altsyncram_component.lpm_type = "altsyncram",
 		altsyncram_component.numwords_a = 256,
 		altsyncram_component.operation_mode = "SINGLE_PORT",

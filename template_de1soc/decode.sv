@@ -1,3 +1,5 @@
+// Module executes the last part of the decryption algorithm, and also checks if decoded byte is a valid ASCII character 
+
 module decode(
 	input clk,
 	input fail_sensitive,
@@ -25,6 +27,7 @@ parameter message_length_true = 5'd31;
 
 logic [7:0] i, j, f, k, s_at_i, s_at_j, s_at_f, decrypted_byte;
 logic [7:0] state, last_state;
+
 /*
 i = 0, j=0
 for k = 0 to message_length-1 { // message_length is 32 in our implementation
@@ -36,6 +39,7 @@ decrypted_output[k] = f xor encrypted_input[k] // 8 bit wide XOR function
 }
 */
 
+// State declarations
 localparam IDLE                 = 8'b00000_000;
 localparam INIT                 = 8'b00001_000;
 localparam INC_I                = 8'b10100_000;
@@ -57,14 +61,13 @@ localparam WRITE_DECRYPTED_BYTE = 8'b10000_000;
 localparam INC_K_CHECK          = 8'b10001_000;
 localparam FINISH               = 8'b10010_010;
 localparam FAIL                 = 8'b10011_100;
-//localparam WAIT_STATE_2         = 8'b11111_000;
 
-
+// Assign state dependant outputs
 assign fail = state[2];
 assign finish = state[1];
 assign decode_wren = state[0];
 
-
+// Algorithm implementation
 always_ff @ (posedge clk) begin
 	last_state <= state;
 	case(state)
@@ -73,7 +76,8 @@ always_ff @ (posedge clk) begin
 			if (start) state <= INIT;
 			else state <= IDLE;
 		end
-			
+		
+		// Initialize values to 0
 		INIT: begin
 			i <= 8'b0;
 			j <= 8'b0;
@@ -81,11 +85,11 @@ always_ff @ (posedge clk) begin
 			s_at_i <= 8'b0;
 			s_at_j <= 8'b0; 
 			s_at_f <= 8'b0;
-			//f <= 8'b0;
 			state <= INC_I;
 		
 		end
 		
+		// Encrypted data and decrypted data will have same address, which will increment by one every iteration of decode loop
 		INC_I: begin
 			encrypted_addr <= k;
 			decrypted_addr <= k;
@@ -98,7 +102,8 @@ always_ff @ (posedge clk) begin
 			decode_address <= i;
 			state <= WAIT_STATE;
 		end
-			
+		
+		// Wait state spovides an extra clock period for data to be ready before reading / writing. May be unneccesary, but no significant efficiency implications
 		WAIT_STATE: begin
 			if (last_state == SET_I_ADDR) state <= READ_I_VALUE;
 			else if (last_state == SET_J_ADDR) state <= READ_J_VALUE;
@@ -126,9 +131,7 @@ always_ff @ (posedge clk) begin
 			state <= WAIT_STATE;
 		
 		end
-		
-		//WAIT_STATE_
-		
+				
 		READ_J_VALUE: begin
 			s_at_j <= decode_q;
 			decode_data <= s_at_i;
@@ -149,8 +152,6 @@ always_ff @ (posedge clk) begin
 		
 		end
 		
-		//WAIT_STATE
-		
 		WRITE_J_AT_I: begin
 			
 			state <= CALC_F_ADDR;
@@ -168,9 +169,7 @@ always_ff @ (posedge clk) begin
 			state <= WAIT_STATE;
 		
 		end
-		
-		//waitstate:
-		
+				
 		READ_F_VALUE: begin
 			s_at_f <= decode_q;
 			state <= DECRYPT_BYTE;
@@ -183,6 +182,7 @@ always_ff @ (posedge clk) begin
 		
 		end
 		
+		// Check to see if decoded byte is an ASCII character within the provided range
 		CHECK_RESULT: begin
 			if (fail_sensitive) begin
 				if (decrypted_byte == 8'd32 | ((decrypted_byte >= 8'd97) & (decrypted_byte <= 8'd122)))
@@ -201,7 +201,7 @@ always_ff @ (posedge clk) begin
 		
 		end
 			
-		
+		// Check if message has been fully read
 		INC_K_CHECK: begin
 			if (k == message_length_true) state <= FINISH;
 			else begin

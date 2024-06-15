@@ -37,7 +37,13 @@
 // synopsys translate_off
 `timescale 1 ps / 1 ps
 // synopsys translate_on
-module encrypted_memory (
+module encrypted_memory 
+#(
+	parameter file_location = "./secret_messages/msg_4_for_task3/message.mif",
+	parameter core_num = 1
+)
+
+(
 	address,
 	clock,
 	data,
@@ -87,9 +93,9 @@ module encrypted_memory (
 	defparam
 		altsyncram_component.clock_enable_input_a = "BYPASS",
 		altsyncram_component.clock_enable_output_a = "BYPASS",
-		altsyncram_component.init_file = "./secret_messages/msg_4_for_task3/message.mif",
+		altsyncram_component.init_file = file_location,
 		altsyncram_component.intended_device_family = "Cyclone V",
-		altsyncram_component.lpm_hint = "ENABLE_RUNTIME_MOD=YES,INSTANCE_NAME=E",
+		altsyncram_component.lpm_hint = {"ENABLE_RUNTIME_MOD=YES,INSTANCE_NAME=E_", ((core_num / 10)+48),((core_num % 10)+48)},
 		altsyncram_component.lpm_type = "altsyncram",
 		altsyncram_component.numwords_a = 256,
 		altsyncram_component.operation_mode = "SINGLE_PORT",
