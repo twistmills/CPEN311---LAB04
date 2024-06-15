@@ -308,27 +308,31 @@ set_location_assignment PIN_E12 -to VGA_R[6]
 set_location_assignment PIN_F13 -to VGA_R[7]
 set_location_assignment PIN_C10 -to VGA_SYNC_N
 set_location_assignment PIN_D11 -to VGA_VS
-set_global_assignment -name SYSTEMVERILOG_FILE shuffle_memory_with_key.sv
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name SYSTEMVERILOG_FILE "Our Code/shuffle_memory_with_key.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "Our Code/shared_s_access.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "Our Code/s_memory_init_tb.sv"
 set_global_assignment -name SYSTEMVERILOG_FILE "Our Code/s_memory_init.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "Our Code/rc4_decryptor.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "Our Code/ksa.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "Our Code/decoder_core_control.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "Our Code/decode.sv"
+set_global_assignment -name SOURCE_FILE s_memory.cmp
+set_global_assignment -name SOURCE_FILE encrypted_memory.cmp
+set_global_assignment -name SOURCE_FILE decrypted_memory.cmp
 set_global_assignment -name SDC_FILE timing_constraints.sdc
-set_global_assignment -name SYSTEMVERILOG_FILE shared_s_access.sv
 set_global_assignment -name VERILOG_FILE SevenSegmentDisplayDecoder.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE sim/shared_access_simulation.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE sim/Waveform.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE sim/Waveform1.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE shared_access_simulation.vwf
-set_global_assignment -name SYSTEMVERILOG_FILE ksa.sv
 set_global_assignment -name QIP_FILE s_memory.qip
-set_global_assignment -name SYSTEMVERILOG_FILE decoder_core_control.sv
 set_global_assignment -name VECTOR_WAVEFORM_FILE memory_init_simulation.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE decode_core_control_simulation.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE shuffle_simulation.vwf
-set_global_assignment -name SYSTEMVERILOG_FILE decode.sv
 set_global_assignment -name QIP_FILE decrypted_memory.qip
 set_global_assignment -name QIP_FILE encrypted_memory.qip
 set_global_assignment -name VECTOR_WAVEFORM_FILE decode_simulation.vwf
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name SYSTEMVERILOG_FILE rc4_decryptor.sv
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
