@@ -1,7 +1,7 @@
+// Module controls the flow of the decryption algortihm from initialization, shuffle and decode
+
 module decoder_core_control(
 	input clk,
-//	input [23:0] secret_key,
-//	output [23:0] shuffle_secret_key,
 	
 	output [1:0] s_source,
 	
@@ -18,13 +18,12 @@ module decoder_core_control(
 	output decode_start,
 	input decode_finish,
 	input decode_failed
-	//output [23:4] successful_secret_key   // Might need to pass back the secret key unless we keep track globally 
 	
 	);
 
 logic [10:0] state;
 
-// states, add count to state once finalized
+// State declarations
 localparam IDLE            = 11'b0000_00000_00;
 localparam START_INIT      = 11'b0001_00001_01;
 localparam WAIT_INIT       = 11'b0010_00000_01;
@@ -35,13 +34,15 @@ localparam WAIT_DECODE     = 11'b0110_00000_11;
 localparam DECODE_FAIL     = 11'b0111_01000_00;
 localparam DECODE_FINISH   = 11'b1000_10000_00;
 
+// State dependant outputs
 assign init_start = state[2];
 assign shuffle_start = state[3];
 assign decode_start = state[4];
 assign finish = state[6];
 assign s_source = state[1:0];
-assign failed = decode_failed;
+assign failed = state[5];
 
+// Flow control of decode algorithm
 always_ff @ (posedge clk)
 
 	case(state)
@@ -71,11 +72,17 @@ always_ff @ (posedge clk)
 		
 		end
 		
-		DECODE_FAIL: state <= IDLE;
+		DECODE_FAIL: begin
+			if (start) state <= START_INIT;
+			else state <= DECODE_FAIL;
 		
-		DECODE_FINISH: state <= IDLE;
+		end
 		
+		DECODE_FINISH: begin
+			if (start) state <= IDLE;
+			else state <= DECODE_FINISH;
 		
+		end
 		default: state <= IDLE;
 		
 		

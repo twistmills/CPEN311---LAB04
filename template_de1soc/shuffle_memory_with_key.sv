@@ -1,5 +1,5 @@
+// Module to execute part 2 of decryption algorithm
 module shuffle_memory_with_key(
-
 
 input clk,
 input start,
@@ -16,6 +16,7 @@ output [7:0] secret_key_byte_debug
 );
 
 assign secret_key_byte_debug = secret_key_byte;
+
 // Algotithm 
 // j = 0
 // for i = 0 to 255 {
@@ -23,6 +24,8 @@ assign secret_key_byte_debug = secret_key_byte;
 // swap values of s[i] and s[j]
 // }
 
+
+// Internal values used in algorithm
 logic [7:0] j;
 logic [7:0] i;
 logic [7:0] f;
@@ -35,6 +38,8 @@ logic [7:0] secret_key_byte;
 localparam max_address = 8'hFF;
 localparam key_length = 8'h03;
 
+
+// State declaration
 localparam IDLE            = 7'b0000_00;
 localparam INIT            = 7'b0001_00;
 localparam SET_I_ADDR      = 7'b0010_00;
@@ -52,6 +57,7 @@ localparam WAIT_STATE      = 7'b1100_00;
 assign shuffle_wren = state[0];
 assign finish = state[1];
 
+// Compute byte of secret key to be used
 always_ff @(*) begin
 	case(i % key_length)
 		2'b00: secret_key_byte = secret_key[23:16];
@@ -60,7 +66,9 @@ always_ff @(*) begin
 		default: secret_key_byte = 8'b0;
 	endcase
 end
-	
+
+
+// Execute part 2 of algorithm
 always @ (posedge clk) begin
 
 	last_state <= state;
@@ -74,6 +82,7 @@ always @ (posedge clk) begin
 		state <= SET_I_ADDR;
 	end
 	
+	// Wait state provides an extra clock period before reading data from memory
 	WAIT_STATE: begin
 		if (last_state == SET_I_ADDR) state <= READ_S_AT_I;
 		else if (last_state == SET_J_ADDR) state <= READ_S_AT_J;
@@ -91,7 +100,6 @@ always @ (posedge clk) begin
 	end
 	
 	MATH: begin
-		//j <= j + shuffle_q + secret_key[(current_address % key_length)]
 		j <= (j + s_at_i + secret_key_byte);
 		state <= SET_J_ADDR;
 	end
@@ -107,9 +115,7 @@ always @ (posedge clk) begin
 		shuffle_data <= s_at_i;
 	end
 	
-	WRITE_I: begin
-	   //shuffle_address <= j already set
-		
+	WRITE_I: begin		
 		state <= SET_I_WR_ADDR;
 	end
 	
@@ -118,10 +124,9 @@ always @ (posedge clk) begin
 		state <= WRITE_J;
 		shuffle_data <= s_at_j;
 	end
+	
 	WRITE_J: begin
-		
-		//shuffle_data <= 8'h69;
-		state <= INCREMENT_CHECK;
+				state <= INCREMENT_CHECK;
 	end
 	
 	INCREMENT_CHECK: begin

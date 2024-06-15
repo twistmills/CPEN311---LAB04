@@ -1,4 +1,9 @@
-module rc4_decryptor(
+module rc4_decryptor
+#(
+parameter file_location = "./secret_messages/msg_4_for_task3/message.mif",
+parameter core_num = 1
+)
+(
 	input clk,
 	input start,
 	output finish,
@@ -6,30 +11,30 @@ module rc4_decryptor(
 	
 	input [23:0] secret_key
 
-
 );
 
-//logic [23:0] secret_key = 24'h000249;
+
 assign fail = core_fail;
 assign finish = core_finish;
-	
+
+// Instatiate s memory
 logic [7:0] s_q;
 logic [7:0] s_address;
 logic [7:0] s_data;
 logic s_wren;
 	
-s_memory s_memory_inst(
+s_memory #(.core_num(core_num)) s_memory_inst (
 	.clock(clk),
 	.address(s_address),
 	.data(s_data),
 	.wren(s_wren),
 	.q(s_q));
 
-	
+// Instatiate decrypted message memory
 logic [7:0] d_address;
 logic [7:0] d_data;
 	
-decrypted_memory d_memory_inst(
+decrypted_memory #(.core_num(core_num)) d_memory_inst(
 	.clock(clk),
 	.address(d_address),
 	.data(d_data),
@@ -38,14 +43,18 @@ decrypted_memory d_memory_inst(
 	
 logic [7:0] e_address;
 logic [7:0] e_q;
-	
-encrypted_memory e_memory_inst(
+
+
+// Instantiate encrypted memory with file location
+encrypted_memory #(.core_num(core_num), .file_location(file_location)) e_memory_inst(
 	.clock(clk),
 	.address(e_address),
 	.data(),
 	.wren(1'b0),
 	.q(e_q));
 
+	
+// Fill S memory with 00 -> FF
 logic init_start;
 logic init_finish;
 logic [7:0] init_address;
@@ -58,7 +67,8 @@ s_memory_init s_mem_init_inst(
 	.finish(init_finish),
 	.address(init_address),
 	.data(init_data));
-	
+
+// Shuffle S memory according to part 2 of algorithm
 logic shuffle_start;
 logic shuffle_finish;
 logic [7:0] shuffle_data;
@@ -78,7 +88,7 @@ shuffle_memory_with_key shuffle_mem_inst(
 	.shuffle_q(shuffle_q)
 );
 
-// decode module will go here
+// Execute part 3 of algorithm and compare decoded byte with valid characters
 logic decode_start;
 logic decode_finish;
 logic decode_fail;
@@ -104,10 +114,7 @@ decode decode_inst(
 	.decrypted_data(d_data)
 );
 
-
-
-
-
+// Let seperate modules communicate with the same s memory
 logic [1:0] s_source;
 
 shared_s_access shared_access_inst(
@@ -126,15 +133,15 @@ shared_s_access shared_access_inst(
 	.decode_q(decode_q),
 	.decode_wren(decode_wren),
 	.decode_data(decode_data));
+	
 
+// Main control FSM dictating when to initialize, shuffle and decode. Communicates with higher-level module
 logic core_start;
 logic core_finish;
 logic core_fail;	
 	
 decoder_core_control decoder_core_inst(
 	.clk(clk),
-	//.secret_key(secret_key),
-	//.shuffle_secret_key(shuffle_secret_key),
 	.s_source(s_source),
 	.start(start),
 	.finish(core_finish),
@@ -145,9 +152,7 @@ decoder_core_control decoder_core_inst(
 	.shuffle_finish(shuffle_finish),
 	.decode_start(decode_start),
 	.decode_finish(decode_finish),
-	.decode_failed(decode_fail)
-	//output [23:4] successful_secret_key   // Might need to pass back the secret key unless we keep track globally 
-	
+	.decode_failed(decode_fail)	
 	);
 
 
