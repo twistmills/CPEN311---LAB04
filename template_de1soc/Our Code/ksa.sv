@@ -14,8 +14,8 @@ output [6:0] HEX5
 );
 
 // Change numer of cores and file location here
-parameter file_location = "./secret_messages/msg_8_for_task3/message.mif";
-parameter num_cores = 8;
+parameter file_location = "./secret_messages/msg_4_for_task3/message.mif";
+parameter num_cores = 4;
 
 parameter max_key = 24'h4FFFFF;
 
